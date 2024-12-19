@@ -1285,7 +1285,7 @@ Du kan använda %ANVÄNDARE% för att spara varje användares sandlåda till en 
     <message>
         <location filename="OnlineUpdater.cpp" line="163"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
 </context>
 <context>
@@ -1860,12 +1860,12 @@ Notera: Uppdateringskontrollen är ofta bakom senaste GitHub-utgivningen för at
     <message>
         <location filename="Windows/OptionsAccess.cpp" line="325"/>
         <source>Open</source>
-        <translation>Öppna</translation>
+        <translation>Öppen</translation>
     </message>
     <message>
         <location filename="Windows/OptionsAccess.cpp" line="326"/>
         <source>Open for All</source>
-        <translation>Öppna för alla</translation>
+        <translation>Öppen för alla</translation>
     </message>
     <message>
         <location filename="Windows/OptionsAccess.cpp" line="327"/>
@@ -2032,7 +2032,7 @@ Notera: Uppdateringskontrollen är ofta bakom senaste GitHub-utgivningen för at
     <message>
         <location filename="Windows/OptionsAccess.cpp" line="585"/>
         <source>&apos;OpenWinClass=program.exe,#&apos; is not supported, use &apos;NoRenameWinClass=program.exe,*&apos; instead</source>
-        <translation>Öppna WinClass=program.exe,#&apos; stöds inte, använd &apos;NoRenameWinClass=program.exe,*&apos; istället</translation>
+        <translation>ÖppenWinClass=program.exe,#&apos; stöds inte, använd &apos;NoRenameWinClass=program.exe,*&apos; istället</translation>
     </message>
     <message>
         <location filename="Windows/OptionsAccess.cpp" line="628"/>
@@ -2270,7 +2270,7 @@ Notera: Uppdateringskontrollen är ofta bakom senaste GitHub-utgivningen för at
         <location filename="Windows/OptionsForce.cpp" line="341"/>
         <source>For security reasons it is not permitted to create entirely wildcard BreakoutDocument presets.</source>
         <oldsource>For security reasons it it not permitted to create entirely wildcard BreakoutDocument presets.</oldsource>
-        <translation type="unfinished">För säkerhetsskäl är det inte tillåtet att helt skapa jokerteckenutbrytardokuments förinställningar.</translation>
+        <translation>För säkerhetsskäl är det inte tillåtet att skapa helt, jokerteckens &quot;BreakoutDocument&quot; förinställningar.</translation>
     </message>
     <message>
         <location filename="Windows/OptionsForce.cpp" line="351"/>
@@ -3257,7 +3257,7 @@ Till skillnad från preview-kanalen, inkluderar den inte otestade eller experime
     <message>
         <location filename="SbiePlusAPI.cpp" line="797"/>
         <source>OPEN Root Access</source>
-        <translation>Öppna root-tillgång</translation>
+        <translation>Öppen roottillgång</translation>
     </message>
     <message>
         <location filename="SbiePlusAPI.cpp" line="799"/>
@@ -5381,7 +5381,7 @@ Notera: Uppdateringskollen är ofta bakom senaste GitHub-utgivningen för att s�
     <message>
         <location filename="Views/SbieView.cpp" line="208"/>
         <source>Open Registry</source>
-        <translation>Öppna registret</translation>
+        <translation>Öppet register</translation>
     </message>
     <message>
         <location filename="Views/SbieView.cpp" line="204"/>
@@ -5917,7 +5917,7 @@ Notera: Uppdateringskollen är ofta bakom senaste GitHub-utgivningen för att s�
         <translation>Är du säker på att du vill köra programmet utanför sandlådan?</translation>
     </message>
     <message>
-        <location filename="Windows/SelectBoxWindow.cpp" line="268"/>
+        <location filename="Windows/SelectBoxWindow.cpp" line="266"/>
         <source>Please select a sandbox.</source>
         <translation>Vänligen välj en sandlåda.</translation>
     </message>
@@ -6066,7 +6066,7 @@ Notera: Uppdateringskollen är ofta bakom senaste GitHub-utgivningen för att s�
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="250"/>
         <source>Hide (Run invisible in Background)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj (Kör osynlig i bakgrunden)</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="256"/>
@@ -7384,7 +7384,7 @@ Om du redan är en Great Supporter on Patreon, kan Sandboxie söka på nätet f�
     <message>
         <location filename="Views/TraceView.cpp" line="298"/>
         <source>Open</source>
-        <translation>Öppna</translation>
+        <translation>Öppen</translation>
     </message>
     <message>
         <location filename="Views/TraceView.cpp" line="299"/>
@@ -7586,7 +7586,7 @@ Om du redan är en Great Supporter on Patreon, kan Sandboxie söka på nätet f�
     <message>
         <location filename="Forms/ExtractDialog.ui" line="14"/>
         <source>Extract Files</source>
-        <translation></translation>
+        <translation>Extrahera filer</translation>
     </message>
     <message>
         <location filename="Forms/ExtractDialog.ui" line="59"/>
@@ -7602,7 +7602,7 @@ Om du redan är en Great Supporter on Patreon, kan Sandboxie söka på nätet f�
     <message>
         <location filename="Forms/ExtractDialog.ui" line="22"/>
         <source>Box Root Folder</source>
-        <translation>Lådrootsmapp</translation>
+        <translation>Lådas rootsmapp</translation>
     </message>
     <message>
         <location filename="Forms/ExtractDialog.ui" line="35"/>
@@ -7944,7 +7944,7 @@ Om du redan är en Great Supporter on Patreon, kan Sandboxie söka på nätet f�
     <message>
         <location filename="Forms/OptionsWindow.ui" line="780"/>
         <source>Open System Protected Storage</source>
-        <translation>Öppna System Protected Storage</translation>
+        <translation>Öppet System Protected Storage</translation>
     </message>
     <message>
         <source>Issue message 2111 when a process access is denided</source>
@@ -7990,7 +7990,7 @@ Om du redan är en Great Supporter on Patreon, kan Sandboxie söka på nätet f�
     <message>
         <location filename="Forms/OptionsWindow.ui" line="301"/>
         <source>Box Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Lådnoteringar</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="342"/>
@@ -8072,7 +8072,7 @@ Om du redan är en Great Supporter on Patreon, kan Sandboxie söka på nätet f�
         <location filename="Forms/OptionsWindow.ui" line="1346"/>
         <source>Use original Access Control Entries for boxed Files and Folders (for MSIServer enable exemptions)</source>
         <oldsource>Use original Access Control Entries for boxed Files and Folders (for MSIServer enable excemptions)</oldsource>
-        <translation type="unfinished">Använd ursprungliga Tillgångskontrollentrèer för lådade filer och mappar (för MSIServer aktivera undantag)</translation>
+        <translation>Använd ursprungliga Tillgångskontrollentrèer för lådade filer och mappar (för MSIServer aktivera undantag)</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1356"/>
@@ -8082,18 +8082,18 @@ Om du redan är en Great Supporter on Patreon, kan Sandboxie söka på nätet f�
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1364"/>
         <source>Run Processes on an own Sandboxed Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Kör processer på ett eget sandlådat skrivbord</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1466"/>
         <source>Desktop Isolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrivbordsisolering</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1473"/>
         <source>Open Window Station (improves compatibility by reducing desktop isolation)</source>
         <oldsource>Open Window Station (improves compatybility by reducing desktop isolation)</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Öppen fönsterstation (Förbättrar kompatibilitet genom reducering av skrivbordsisolering)</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1669"/>
@@ -8651,7 +8651,7 @@ Detta görs för att  förhindra Rogue-processer inuti sandlådan från att skap
     <message>
         <location filename="Forms/OptionsWindow.ui" line="976"/>
         <source>Open access to Proxy Configurations</source>
-        <translation>Öppna tillgång till Proxy-konfigurationer</translation>
+        <translation>Öppen tillgång till Proxy-konfigurationer</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="1296"/>
@@ -8672,7 +8672,7 @@ Detta görs för att  förhindra Rogue-processer inuti sandlådan från att skap
         <location filename="Forms/OptionsWindow.ui" line="2416"/>
         <source>&lt;b&gt;&lt;font color=&apos;red&apos;&gt;SECURITY ADVISORY&lt;/font&gt;:&lt;/b&gt; Using &lt;a href=&quot;sbie://docs/breakoutfolder&quot;&gt;BreakoutFolder&lt;/a&gt; and/or &lt;a href=&quot;sbie://docs/breakoutprocess&quot;&gt;BreakoutProcess&lt;/a&gt; in combination with Open[File/Pipe]Path directives can compromise security, as can the use of &lt;a href=&quot;sbie://docs/breakoutdocument&quot;&gt;BreakoutDocument&lt;/a&gt; allowing any * or insecure (*.exe;*.dll;*.ocx;*.cmd;*.bat;*.lnk;*.pif;*.url;*.ps1;etc...) extensions. Please review the security section for each option in the documentation before use.</source>
         <oldsource>&lt;b&gt;&lt;font color=&apos;red&apos;&gt;SECURITY ADVISORY&lt;/font&gt;:&lt;/b&gt; Using &lt;a href=&quot;sbie://docs/breakoutfolder&quot;&gt;BreakoutFolder&lt;/a&gt; and/or &lt;a href=&quot;sbie://docs/breakoutprocess&quot;&gt;BreakoutProcess&lt;/a&gt; in combination with Open[File/Pipe]Path directives can compromise security, as can the use of &lt;a href=&quot;sbie://docs/breakoutdocument&quot;&gt;BreakoutDocument&lt;/a&gt; allowing any * or insecure (*.exe;*.dll;*.ocx;*.cmd;*.bat;*.lnk;*.pif;*.url;*.ps1;etc…) extensions. Please review the security section for each option in the documentation before use.</oldsource>
-        <translation type="unfinished">&lt;b&gt;&lt;font color=&apos;red&apos;&gt;SÄKERHETSRÅDGIVNING&lt;/font&gt;:&lt;/b&gt; Använda &lt;a href=&quot;sbie://docs/breakoutfolder&quot;&gt;Utbrytarmapp&lt;/a&gt; och/eller &lt;a href=&quot;sbie://docs/breakoutprocess&quot;&gt;Utbrytarprocess&lt;/a&gt; i kombination med Open[File/Pipe]Path-direktiv kan kompromettera säkerhet, likt användandet av &lt;a href=&quot;sbie://docs/breakoutdocument&quot;&gt;Utbrytardokument&lt;/a&gt; tillåta varje * eller osäkra (*.exe;*.dll;*.ocx;*.cmd;*.bat;*.lnk;*.pif;*.url;*.ps1;etc…) förlängningar. Vänligen granska säkerhetssektionen för varje alternativ i dokumentationen före användande.</translation>
+        <translation>&lt;b&gt;&lt;font color=&apos;red&apos;&gt;SÄKERHETSRÅDGIVNING&lt;/font&gt;:&lt;/b&gt; Använda &lt;a href=&quot;sbie://docs/breakoutfolder&quot;&gt;Utbrytarmapp&lt;/a&gt; och/eller &lt;a href=&quot;sbie://docs/breakoutprocess&quot;&gt;Utbrytarprocess&lt;/a&gt; i kombination med Open[File/Pipe]Path-direktiv kan kompromettera säkerhet, likt användandet av &lt;a href=&quot;sbie://docs/breakoutdocument&quot;&gt;Utbrytardokument&lt;/a&gt; tillåta varje * eller osäkra (*.exe;*.dll;*.ocx;*.cmd;*.bat;*.lnk;*.pif;*.url;*.ps1;etc…) förlängningar. Vänligen granska säkerhetssektionen för varje alternativ i dokumentationen före användande.</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="2446"/>
@@ -9084,7 +9084,7 @@ Processmatchningsnivån har en högre prioritet än säregenheten och beskriver 
     <message>
         <location filename="Forms/OptionsWindow.ui" line="913"/>
         <source>Open access to Windows Local Security Authority</source>
-        <translation>Öppna tillgång till Windows Local Security Authority</translation>
+        <translation>Öppen tillgång till Windows Local Security Authority</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="969"/>
@@ -9439,17 +9439,17 @@ istället för &quot;*&quot;.</translation>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="4885"/>
         <source>Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Processer</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="4995"/>
         <source>This option hides the registry path *\Software*\Microsoft\Windows\CurrentVersion\Uninstall\*, allowing software installed on the host to be reinstalled in the sandbox. However, it does not hide software-specific files and folders. If the installer still encounters issues, you will need to define custom WriteFilePath entries to hide the relevant files on disk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Detta alternativ döljer registersökvägen *\Software*\Microsoft\Windows\CurrentVersion\Uninstall\*, tillåtandes program installerade på värden att bli återinstallerade i sandlådan. Hursom, det döljer inte programspecifika filer och mappar. Om installeraren fortfarande råkar på problem, behöver du definiera anpassade WriteFilePath entrèer för att dölja de relevanta filerna på disken.</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="4998"/>
         <source>Hide the host software&apos;s uninstall key (see tooltip)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj värdprogrammets avinstalleringsnyckel (Se Verktygstips)</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="5068"/>
@@ -9947,8 +9947,7 @@ istället för &quot;*&quot;.</translation>
     <message>
         <location filename="Forms/SelectBoxWindow.ui" line="45"/>
         <source>Force direct child to be sandboxed, but does not include indirect child processes that are opened through the DCOM and IPC interface.</source>
-        <translatorcomment>Tvinga direkt avkomling att bli sandlådad, men inkludera inte indirekta avkomlingsprocesser som är öppnade genom DCOM och IPC-gränssnittet.</translatorcomment>
-        <translation></translation>
+        <translation>Tvinga direkt avkomling att bli sandlådad, men inkludera inte indirekta avkomlingsprocesser som är öppnade genom DCOM och IPC-gränssnittet.</translation>
     </message>
     <message>
         <location filename="Forms/SelectBoxWindow.ui" line="105"/>
@@ -9991,7 +9990,7 @@ istället för &quot;*&quot;.</translation>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="32"/>
         <source>SandboxiePlus Settings</source>
-        <translation>Sandboxie-Plus - Inställningar</translation>
+        <translation>Sandboxie-Plus Inställningar</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="55"/>
@@ -10020,7 +10019,7 @@ istället för &quot;*&quot;.</translation>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="101"/>
         <source>Open urls from this ui sandboxed</source>
-        <translation>Öppna internetadresser från denna programpanel sandlådade</translation>
+        <translation>Öppna webbadresser från denna programpanel sandlådade</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="207"/>
@@ -10448,17 +10447,17 @@ istället för &quot;*&quot;.</translation>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="676"/>
         <source>Sandboxed Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Sandlådat skrivbord</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="683"/>
         <source>Switch to sandboxed desktop when starting a process</source>
-        <translation type="unfinished"></translation>
+        <translation>Skifta till sandlådat skrivbord vid startande av en process</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="690"/>
         <source>Switch to sandboxed desktop with double click</source>
-        <translation type="unfinished"></translation>
+        <translation>Skifta till sandlådat skrivbord med Dubbelklick</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1173"/>
@@ -10613,7 +10612,7 @@ istället för &quot;*&quot;.</translation>
         <location filename="Forms/SettingsWindow.ui" line="2519"/>
         <source>Issue message 1321 when a process has been forced into a sandbox</source>
         <oldsource>Issue message 1321 when a processes has been forced in to a sandbox</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Utfärda meddelande 1321 när en process har tvingats in i en sandlåda</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="2529"/>
@@ -10753,7 +10752,7 @@ istället för &quot;*&quot;.</translation>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1816"/>
         <source>Enter/view Supporter Certificate</source>
-        <translation type="unfinished"></translation>
+        <translation>För in/granska supportercertifikat</translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="1829"/>
