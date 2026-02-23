@@ -917,7 +917,8 @@ void CBoxBorder::DrawAllSandboxedBorders()
 		RECT rect;
 		MONITORINFO monitorInfo; // Monitor info for edge clipping
 		int zOrder; // Lower value = higher in Z-order (on top)
-		CSandBox* pBox; // NULL if not sandboxed
+		ULONG pid;
+		CSandBox* pBox; // NULL if not sandboxed or not border-eligible
 	};
 
 	// Collect ALL windows (sandboxed and non-sandboxed) in Z-order
@@ -972,17 +973,53 @@ void CBoxBorder::DrawAllSandboxedBorders()
 					SWindowInfo wnd;
 					wnd.hWnd = hWnd;
 					wnd.zOrder = zOrder;
+					wnd.pid = 0;
 					GetActiveWindowRect(hWnd, &wnd.rect);
 					memset(&wnd.monitorInfo, 0, sizeof(MONITORINFO));
 
 					// Check if this is a sandboxed window
-					ULONG pid = 0;
-					GetWindowThreadProcessId(hWnd, &pid);
-					CSandBoxPtr pBox = m_Api->GetBoxByProcessId(pid);
+					GetWindowThreadProcessId(hWnd, &wnd.pid);
+					CSandBoxPtr pBox = m_Api->GetBoxByProcessId(wnd.pid);
 					wnd.pBox = pBox.data();
 
 					// For sandboxed windows, check fullscreen and get monitor info
 					// Skip fullscreen sandboxed windows (no border) but still track for Z-order
+					if (wnd.pBox)
+					{
+						// Exclude secondary/helper windows using three checks in order:
+						//
+						// 1. GW_OWNER != NULL  ->  owned window (dialog, toolbar shown via
+						//    Show(owner), child-like popup). WinForms Show(IWin32Window owner)
+						//    calls SetWindowLong(GWL_HWNDPARENT), so owned WinForms windows
+						//    (e.g. ShapeManagerMenu toolbar shown via menuForm.Show(Form))
+						//    are reliably caught here.
+						//
+						// 2. WS_EX_TOOLWINDOW without WS_EX_APPWINDOW  ->  classic hidden-from-
+						//    taskbar windows (WinForms ShowInTaskbar=false legacy path, tray
+						//    icons, floating panels).
+						//
+						// 3. WS_POPUP + no WS_CAPTION + no WS_EX_APPWINDOW  ->  unowned borderless
+						//    popup. WinForms ShowInTaskbar=false (modern path) parks the form under
+						//    a hidden parking window and does NOT set WS_EX_TOOLWINDOW, so tests 1
+						//    and 2 may both miss it; this catches the rest.
+						//
+						// Normal captioned windows (browsers, editors) never match any of these.
+						// Fullscreen games / WS_EX_APPWINDOW popups pass all three checks.
+
+						bool isMainWindow = true;
+						if (GetWindow(hWnd, GW_OWNER) != NULL && !(Style & WS_CAPTION))
+							// Owned + no caption = toolbar/overlay/popup helper. Exclude.
+							// Owned + caption = proper dialog (Open File, Save, Print...). Allow.
+							isMainWindow = false;
+						else if ((ExStyle & WS_EX_TOOLWINDOW) && !(ExStyle & WS_EX_APPWINDOW))
+							isMainWindow = false;
+						else if ((Style & WS_POPUP) && !(Style & WS_CAPTION) && !(ExStyle & WS_EX_APPWINDOW))
+							isMainWindow = false;
+
+						if (!isMainWindow)
+							wnd.pBox = NULL;
+					}
+
 					if (wnd.pBox)
 					{
 						if (!ShouldDrawBorderForWindow(hWnd, wnd.rect, Style, &wnd.monitorInfo))
@@ -1116,46 +1153,49 @@ void CBoxBorder::DrawAllSandboxedBorders()
 			if (it != boxBorders.end())
 			{
 				SBoxBorderData& data = it->second;
+
 				if (!data.hrgnBorder)
 					data.hrgnBorder = CreateRectRgn(0, 0, 0, 0);
 
 				// Apply edge clipping and taskbar adjustment if we have monitor info
-				RECT adjustedRect = wnd.rect;
-				if (wnd.monitorInfo.cbSize != 0)
-					adjustedRect = AdjustRectToDesktop(wnd.rect, wnd.monitorInfo, data.width);
+				{
+					RECT adjustedRect = wnd.rect;
+					if (wnd.monitorInfo.cbSize != 0)
+						adjustedRect = AdjustRectToDesktop(wnd.rect, wnd.monitorInfo, data.width);
 
-				// Create border region for this window (skip for label-only mode)
-				if (!data.labelOnly) {
-					HRGN hrgnBorder = CreateBorderRegion(&adjustedRect, data.width);
+					// Create border region for this window (skip for label-only mode)
+					if (!data.labelOnly) {
+						HRGN hrgnBorder = CreateBorderRegion(&adjustedRect, data.width);
 
-					// Subtract the covered area (all windows above) from this border
-					CombineRgn(hrgnBorder, hrgnBorder, hrgnCovered, RGN_DIFF);
+						// Subtract the covered area (all windows above) from this border
+						CombineRgn(hrgnBorder, hrgnBorder, hrgnCovered, RGN_DIFF);
 
-					// Add this border to the box's combined border region
-					CombineRgn(data.hrgnBorder, data.hrgnBorder, hrgnBorder, RGN_OR);
-					DeleteObject(hrgnBorder);
-				}
+						// Add this border to the box's combined border region
+						CombineRgn(data.hrgnBorder, data.hrgnBorder, hrgnBorder, RGN_OR);
+						DeleteObject(hrgnBorder);
+					}
 
-				// Track this window for per-window labels (using adjusted rect)
-				SBoxWindowInfo winInfo;
-				winInfo.rect = adjustedRect;
-				// Save covered area ABOVE this window for label clipping
-				winInfo.hrgnCoveredAbove = CreateRectRgn(0, 0, 0, 0);
-				CombineRgn(winInfo.hrgnCoveredAbove, hrgnCovered, NULL, RGN_COPY);
-				data.windows.push_back(winInfo);
+					// Track this window for per-window labels (using adjusted rect)
+					SBoxWindowInfo winInfo;
+					winInfo.rect = adjustedRect;
+					// Save covered area ABOVE this window for label clipping
+					winInfo.hrgnCoveredAbove = CreateRectRgn(0, 0, 0, 0);
+					CombineRgn(winInfo.hrgnCoveredAbove, hrgnCovered, NULL, RGN_COPY);
+					data.windows.push_back(winInfo);
 
-				// Update bounding rect (using adjusted rect)
-				if (!data.hasWindows) {
-					data.boundingRect = adjustedRect;
-					data.hasWindows = true;
-				} else {
-					if (adjustedRect.left < data.boundingRect.left) data.boundingRect.left = adjustedRect.left;
-					if (adjustedRect.top < data.boundingRect.top) data.boundingRect.top = adjustedRect.top;
-					if (adjustedRect.right > data.boundingRect.right) data.boundingRect.right = adjustedRect.right;
-					if (adjustedRect.bottom > data.boundingRect.bottom) data.boundingRect.bottom = adjustedRect.bottom;
-				}
-			}
-		}
+					// Update bounding rect (using adjusted rect)
+					if (!data.hasWindows) {
+						data.boundingRect = adjustedRect;
+						data.hasWindows = true;
+					} else {
+						if (adjustedRect.left < data.boundingRect.left) data.boundingRect.left = adjustedRect.left;
+						if (adjustedRect.top < data.boundingRect.top) data.boundingRect.top = adjustedRect.top;
+						if (adjustedRect.right > data.boundingRect.right) data.boundingRect.right = adjustedRect.right;
+						if (adjustedRect.bottom > data.boundingRect.bottom) data.boundingRect.bottom = adjustedRect.bottom;
+					}
+				} // end adjustedRect scope
+			} // end if (it != boxBorders.end())
+		} // end if (wnd.pBox)
 
 		// Add this window's rectangle to covered area (both sandboxed and non-sandboxed)
 		HRGN hrgnWindow = CreateRectRgn(wnd.rect.left, wnd.rect.top, wnd.rect.right, wnd.rect.bottom);
