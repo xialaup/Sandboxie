@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 
 
+## [1.17.3 / 5.72.3] - 2026-02-??
+
+### Added
+- added MIDI workaround template for Windows 11 [#5183](https://github.com/sandboxie-plus/Sandboxie/issues/5183) [#5203](https://github.com/sandboxie-plus/Sandboxie/issues/5203#issuecomment-3938495163) (thanks xsmolasses)
+
+
+
 ## [1.17.2 / 5.72.2] - 2026-02-18
 
 ### Added
