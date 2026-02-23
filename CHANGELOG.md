@@ -11,9 +11,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.17.3 / 5.72.3] - 2026-02-??
 
 ### Added
+
 - added configurable window location settings to control which monitor main, non-main, file recovery, and notification windows open on, including a selectable fallback mode. [#4536](https://github.com/sandboxie-plus/Sandboxie/issues/4536) [#5238](https://github.com/sandboxie-plus/Sandboxie/pull/5238)
   - Global Settings > Interface Config > Window Options
 - added "Label only" border mode option (`onlbl`, `ttllbl`, `alllbl`) that hides the colored border frame and shows only the sandbox name (or alias) label [#5239](https://github.com/sandboxie-plus/Sandboxie/pull/5239)
+- added MIDI workaround template for Windows 11 [#5183](https://github.com/sandboxie-plus/Sandboxie/issues/5183) [#5203](https://github.com/sandboxie-plus/Sandboxie/issues/5203#issuecomment-3938495163) (thanks xsmolasses)
 
 ### Fixed
 - fixed false "Some changes haven't been saved yet" prompt when leaving Network Options with unlisted-process network mode set to non-default
