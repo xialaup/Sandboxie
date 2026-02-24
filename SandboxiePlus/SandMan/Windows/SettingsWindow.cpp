@@ -550,6 +550,8 @@ CSettingsWindow::CSettingsWindow(QWidget* parent)
 	connect(ui.chkBoxOpsNotify, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkMinimize, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkSingleShow, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
+	connect(ui.chkTrayIcons, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
+	connect(ui.chkTrayUseAlias, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	//
 
 	// Interface Config
@@ -1398,6 +1400,8 @@ void CSettingsWindow::LoadSettings()
 	ui.cmbSysTray->setCurrentIndex(theConf->GetInt("Options/SysTrayIcon", 1));
 	ui.cmbTrayBoxes->setCurrentIndex(theConf->GetInt("Options/SysTrayFilter", 0));
 	ui.chkCompactTray->setChecked(theConf->GetBool("Options/CompactTray", false));
+	ui.chkTrayIcons->setChecked(theConf->GetBool("Options/TrayIcons", true));
+	ui.chkTrayUseAlias->setChecked(theConf->GetBool("Options/TrayUseAlias", true));
 	ui.chkBoxOpsNotify->setChecked(theConf->GetBool("Options/AutoBoxOpsNotify", false));
 	ui.cmbOnClose->setCurrentIndex(ui.cmbOnClose->findData(theConf->GetString("Options/OnClose", "ToTray")));
 	ui.chkMinimize->setChecked(theConf->GetBool("Options/MinimizeToTray", false));
@@ -2021,6 +2025,8 @@ void CSettingsWindow::SaveSettings()
 	theConf->SetValue("Options/SysTrayIcon", ui.cmbSysTray->currentIndex());
 	theConf->SetValue("Options/SysTrayFilter", ui.cmbTrayBoxes->currentIndex());
 	theConf->SetValue("Options/CompactTray", ui.chkCompactTray->isChecked());
+	theConf->SetValue("Options/TrayIcons", ui.chkTrayIcons->isChecked());
+	theConf->SetValue("Options/TrayUseAlias", ui.chkTrayUseAlias->isChecked());
 	theConf->SetValue("Options/AutoBoxOpsNotify", ui.chkBoxOpsNotify->isChecked());
 	theConf->SetValue("Options/OnClose", ui.cmbOnClose->currentData());
 	theConf->SetValue("Options/MinimizeToTray", ui.chkMinimize->isChecked());

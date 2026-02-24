@@ -68,7 +68,7 @@ void CSandMan::CreateTrayMenu()
 
 		m_pTrayBoxes = new CTrayTreeWidget();
 
-		m_pTrayBoxes->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Maximum);
+		m_pTrayBoxes->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
 		m_pTrayBoxes->setRootIsDecorated(false);
 		//m_pTrayBoxes->setHeaderLabels(tr("         Sandbox").split("|"));
 		m_pTrayBoxes->setHeaderHidden(true);
@@ -241,20 +241,56 @@ double CSandMan__GetBoxOrder(const QMap<QString, QStringList>& Groups, const QSt
 	return 1000000000;
 }
 
+// Returns a cached custom icon (BoxIcon / DblClickAction). Falls back to null QIcon if none found.
+// Only disk-loaded icons are cached. Color/type icons are cheap and always generated fresh.
+static QIcon CSandMan__GetCachedCustomIcon(const QString& boxName, const QString& boxIconStr,
+	const QString& dblClickAction, const QString& cmdFile,
+	QFileIconProvider& IconProvider, QMap<QString, QPair<QString,QIcon>>& cache)
+{
+	QString configKey = boxIconStr + "|" + dblClickAction;
+	auto it = cache.find(boxName);
+	if (it != cache.end() && it->first == configKey)
+		return it->second; // cache hit (may be null QIcon if no custom icon exists)
+
+	QIcon Icon;
+	if (!boxIconStr.isEmpty()) {
+		int comma = boxIconStr.lastIndexOf(',');
+		bool ok = false;
+		if (comma > 0) {
+			int idx = boxIconStr.mid(comma + 1).toInt(&ok);
+			if (ok) Icon = QIcon(LoadWindowsIcon(boxIconStr.left(comma), idx));
+		}
+		if (Icon.isNull()) Icon = QIcon(QPixmap(boxIconStr));
+	}
+	if (Icon.isNull() && !dblClickAction.isEmpty() && dblClickAction.left(1) != "!" && !cmdFile.isEmpty())
+		Icon = IconProvider.icon(QFileInfo(cmdFile));
+
+	cache[boxName] = qMakePair(configKey, Icon);
+	return Icon;
+}
+
 QAction* CSandMan__MakeBoxEntry(QMenu* pMenu, CSandBoxPlus* pBoxEx, QFileIconProvider& IconProvider, int iNoIcons, bool ColorIcons)
 {
 	static QMenu* pEmptyMenu = new QMenu();
+	if (!pBoxEx) return nullptr;
 
-	QAction* pBoxAction = new QAction(pBoxEx->GetDisplayName());
+	bool bTrayUseAlias = theConf->GetBool("Options/TrayUseAlias", true);
+	QAction* pBoxAction = new QAction(bTrayUseAlias ? pBoxEx->GetDisplayName() : pBoxEx->GetName());
 	if (!iNoIcons) {
 		QIcon Icon;
-		QString Action = pBoxEx->GetText("DblClickAction");
-		if (!Action.isEmpty() && Action.left(1) != "!")
-			Icon = IconProvider.icon(QFileInfo(pBoxEx->GetCommandFile(Action)));
-		else if (ColorIcons)
-			Icon = theGUI->GetColorIcon(pBoxEx->GetColor(), pBoxEx->GetActiveProcessCount());
-		else
-			Icon = theGUI->GetBoxIcon(pBoxEx->GetType(), pBoxEx->GetActiveProcessCount() != 0);
+		bool bTrayIcons = theConf->GetBool("Options/TrayIcons", true);
+		if (bTrayIcons) {
+			QString boxIconStr   = pBoxEx->GetText("BoxIcon");
+			QString dblClickAct  = pBoxEx->GetText("DblClickAction");
+			QString cmdFile      = (!dblClickAct.isEmpty() && dblClickAct.left(1) != "!") ? pBoxEx->GetCommandFile(dblClickAct) : QString();
+			Icon = CSandMan__GetCachedCustomIcon(pBoxEx->GetName(), boxIconStr, dblClickAct, cmdFile, IconProvider, theGUI->m_TrayIconCache);
+		}
+		if (Icon.isNull()) {
+			if (ColorIcons)
+				Icon = theGUI->GetColorIcon(pBoxEx->GetColor(), pBoxEx->GetActiveProcessCount());
+			else
+				Icon = theGUI->GetBoxIcon(pBoxEx->GetType(), pBoxEx->GetActiveProcessCount() != 0);
+		}
 		pBoxAction->setIcon(Icon);
 	}
 	pBoxAction->setData("box:" + pBoxEx->GetName());
@@ -298,6 +334,7 @@ void CSandMan::CreateBoxMenu(QMenu* pMenu, int iOffset, int iSysTrayFilter)
 			continue;
 
 		auto pBoxEx = pBox.objectCast<CSandBoxPlus>();
+		if (!pBoxEx) continue;
 
 		if (iSysTrayFilter == 2) { // pinned only
 			if (!pBox->GetBool("PinToTray", false))
@@ -311,6 +348,7 @@ void CSandMan::CreateBoxMenu(QMenu* pMenu, int iOffset, int iSysTrayFilter)
 		QMenu* pSubMenu = CSandMan__GetBoxParent(Groups, GroupItems, Icon, iNoIcons, pMenu, pPos, pBox->GetName());
 		
 		QAction* pBoxAction = CSandMan__MakeBoxEntry(pMenu, pBoxEx.data(), IconProvider, iNoIcons, ColorIcons);
+		if (!pBoxAction) continue;
 		if (pSubMenu)
 			pSubMenu->addAction(pBoxAction);
 		else
@@ -359,6 +397,8 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 			{
 				QFileIconProvider IconProvider;
 				bool ColorIcons = theConf->GetBool("Options/ColorBoxIcons", false);
+				bool bTrayIcons = theConf->GetBool("Options/TrayIcons", true);
+				bool bTrayUseAlias = theConf->GetBool("Options/TrayUseAlias", true);
 
 				/**/
 				m_pTrayBoxes->clear();
@@ -394,17 +434,24 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 					QTreeWidgetItem* pParent = CBoxPicker::GetBoxParent(Groups, GroupItems, m_pTrayBoxes, pBox->GetName());
 
 					QTreeWidgetItem* pItem = new QTreeWidgetItem();
-					pItem->setText(0, pBoxEx->GetDisplayName());
+					QString displayName = bTrayUseAlias ? pBoxEx->GetDisplayName() : pBoxEx->GetName();
+					pItem->setText(0, displayName);
 					pItem->setData(0, Qt::UserRole, pBox->GetName());
 					QIcon Icon;
-					QString Action = pBox->GetText("DblClickAction");
-					if (!Action.isEmpty() && Action.left(1) != "!")
-						Icon = IconProvider.icon(QFileInfo(pBoxEx->GetCommandFile(Action)));
-					else if(ColorIcons)
-						Icon = theGUI->GetColorIcon(pBoxEx->GetColor(), pBox->GetActiveProcessCount());
-					else
-						Icon = theGUI->GetBoxIcon(pBoxEx->GetType(), pBox->GetActiveProcessCount() != 0);
+					if (bTrayIcons) {
+						QString boxIconStr  = pBox->GetText("BoxIcon");
+						QString dblClickAct = pBox->GetText("DblClickAction");
+						QString cmdFile     = (!dblClickAct.isEmpty() && dblClickAct.left(1) != "!") ? pBoxEx->GetCommandFile(dblClickAct) : QString();
+						Icon = CSandMan__GetCachedCustomIcon(pBox->GetName(), boxIconStr, dblClickAct, cmdFile, IconProvider, m_TrayIconCache);
+					}
+					if (Icon.isNull()) {
+						if(ColorIcons)
+							Icon = theGUI->GetColorIcon(pBoxEx->GetColor(), pBox->GetActiveProcessCount());
+						else
+							Icon = theGUI->GetBoxIcon(pBoxEx->GetType(), pBox->GetActiveProcessCount() != 0);
+					}
 					pItem->setData(0, Qt::DecorationRole, Icon);
+					pItem->setToolTip(0, displayName);
 					if (pParent)
 						pParent->addChild(pItem);
 					else
@@ -492,7 +539,35 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 							Height = 64;
 					}
 
+					bool bNeedsVScroll = Height >= MaxHeight;
 					m_pTrayBoxes->setFixedHeight(Height);
+
+					m_pTrayBoxes->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+					m_pTrayBoxes->setVerticalScrollBarPolicy(bNeedsVScroll ? Qt::ScrollBarAlwaysOn : Qt::ScrollBarAlwaysOff);
+
+					// Measure each item's text to get exact required width
+					QFontMetrics fm(m_pTrayBoxes->font());
+					// DPI-aware scaling: logicalDpiX() returns actual screen DPI (e.g. 192 at 200% scaling)
+					const qreal dpiScale = m_pTrayBoxes->logicalDpiX() / 96.0;
+					int iconSize = m_pTrayBoxes->style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, m_pTrayBoxes);
+					// Ensure the tree widget paints icons at the same size we measure
+					m_pTrayBoxes->setIconSize(QSize(iconSize, iconSize));
+					int indent = m_pTrayBoxes->indentation();
+					// Gap between icon and text, and right margin — scale proportionally with DPI
+					int spacing = qRound(4 * dpiScale);
+					int maxItemWidth = 0;
+					for (QTreeWidgetItemIterator it(m_pTrayBoxes, QTreeWidgetItemIterator::All); *it; ++it) {
+						QTreeWidgetItem* twi = *it;
+						int depth = 0;
+						for (QTreeWidgetItem* p = twi->parent(); p; p = p->parent()) depth++;
+						int itemWidth = depth * indent + iconSize + spacing + fm.horizontalAdvance(twi->text(0)) + spacing;
+						if (itemWidth > maxItemWidth) maxItemWidth = itemWidth;
+					}
+					int scrollBarWidth = bNeedsVScroll ? m_pTrayBoxes->style()->pixelMetric(QStyle::PM_ScrollBarExtent, nullptr, m_pTrayBoxes) : 0;
+					int Width = maxItemWidth + scrollBarWidth + qRound(4 * dpiScale);
+					int MaxWidth = scrRect.width() / 3;
+					if (Width > MaxWidth) Width = MaxWidth;
+					m_pTrayBoxes->setFixedWidth(Width);
 
 					m_pTrayMenu->removeAction(m_pTrayList);
 					m_pTrayMenu->insertAction(m_pTrayMenu->actions().at(m_iTrayPos), m_pTrayList);
