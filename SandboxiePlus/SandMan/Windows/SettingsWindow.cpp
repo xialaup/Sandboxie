@@ -554,19 +554,31 @@ CSettingsWindow::CSettingsWindow(QWidget* parent)
 	connect(ui.chkSingleShow, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkTrayIcons, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkTrayUseAlias, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
+	connect(ui.spnTrayAliasChars, SIGNAL(valueChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkTrayStatusTip, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.cmbTrayStatusTipModifier, SIGNAL(currentIndexChanged(int)), this, SLOT(OnOptChanged()));
+	auto updateTrayAliasCharsUi = [this]() {
+		ui.spnTrayAliasChars->setEnabled(ui.chkTrayUseAlias->isChecked());
+	};
+	connect(ui.chkTrayUseAlias, &QCheckBox::stateChanged, this, [updateTrayAliasCharsUi](int) {
+		updateTrayAliasCharsUi();
+	});
+	updateTrayAliasCharsUi();
 	ui.chkTrayStatusTip->setTristate(true);
-	auto updateTrayStatusTipToolTip = [this]() {
+	auto updateTrayStatusTipUi = [this]() {
 		QString modText = ui.cmbTrayStatusTipModifier->currentText();
 		if (modText.isEmpty())
 			modText = tr("Ctrl");
 		ui.chkTrayStatusTip->setToolTip(tr("Tri-state behavior: unchecked = never, partially checked = only while %1 is held (default), checked = always.").arg(modText));
+		ui.cmbTrayStatusTipModifier->setEnabled(ui.chkTrayStatusTip->checkState() == Qt::PartiallyChecked);
 	};
-	connect(ui.cmbTrayStatusTipModifier, &QComboBox::currentTextChanged, this, [updateTrayStatusTipToolTip](const QString&) {
-		updateTrayStatusTipToolTip();
+	connect(ui.cmbTrayStatusTipModifier, &QComboBox::currentTextChanged, this, [updateTrayStatusTipUi](const QString&) {
+		updateTrayStatusTipUi();
 	});
-	updateTrayStatusTipToolTip();
+	connect(ui.chkTrayStatusTip, &QCheckBox::stateChanged, this, [updateTrayStatusTipUi](int) {
+		updateTrayStatusTipUi();
+	});
+	updateTrayStatusTipUi();
 	//
 
 	// Interface Config
@@ -1417,6 +1429,11 @@ void CSettingsWindow::LoadSettings()
 	ui.chkCompactTray->setChecked(theConf->GetBool("Options/CompactTray", false));
 	ui.chkTrayIcons->setChecked(theConf->GetBool("Options/TrayIcons", true));
 	ui.chkTrayUseAlias->setChecked(theConf->GetBool("Options/TrayUseAlias", true));
+	int iTrayAliasChars = theConf->GetInt("Options/TrayAliasMaxChars", 64);
+	if (iTrayAliasChars < 32 || iTrayAliasChars > 256)
+		iTrayAliasChars = 64;
+	ui.spnTrayAliasChars->setValue(iTrayAliasChars);
+	ui.spnTrayAliasChars->setEnabled(ui.chkTrayUseAlias->isChecked());
 	// 0=never, 1=Ctrl key (default, partial-checked), 2=always
 	int iTrayStatusTip = theConf->GetInt("Options/TrayStatusTip", 1);
 	if (iTrayStatusTip < 0 || iTrayStatusTip > 2)
@@ -1427,6 +1444,7 @@ void CSettingsWindow::LoadSettings()
 	if (trayStatusTipModifierIndex < 0)
 		trayStatusTipModifierIndex = ui.cmbTrayStatusTipModifier->findData("Ctrl");
 	ui.cmbTrayStatusTipModifier->setCurrentIndex(trayStatusTipModifierIndex);
+	ui.cmbTrayStatusTipModifier->setEnabled(ui.chkTrayStatusTip->checkState() == Qt::PartiallyChecked);
 	ui.chkBoxOpsNotify->setChecked(theConf->GetBool("Options/AutoBoxOpsNotify", false));
 	ui.cmbOnClose->setCurrentIndex(ui.cmbOnClose->findData(theConf->GetString("Options/OnClose", "ToTray")));
 	ui.chkMinimize->setChecked(theConf->GetBool("Options/MinimizeToTray", false));
@@ -2052,6 +2070,9 @@ void CSettingsWindow::SaveSettings()
 	theConf->SetValue("Options/CompactTray", ui.chkCompactTray->isChecked());
 	theConf->SetValue("Options/TrayIcons", ui.chkTrayIcons->isChecked());
 	theConf->SetValue("Options/TrayUseAlias", ui.chkTrayUseAlias->isChecked());
+	theConf->SetValue("Options/TrayAliasMaxChars", ui.spnTrayAliasChars->value());
+	theConf->SetValue("Options/TrayStatusTip", (int)ui.chkTrayStatusTip->checkState());
+	theConf->SetValue("Options/TrayStatusTipModifier", ui.cmbTrayStatusTipModifier->currentData());
 	theConf->SetValue("Options/AutoBoxOpsNotify", ui.chkBoxOpsNotify->isChecked());
 	theConf->SetValue("Options/OnClose", ui.cmbOnClose->currentData());
 	theConf->SetValue("Options/MinimizeToTray", ui.chkMinimize->isChecked());

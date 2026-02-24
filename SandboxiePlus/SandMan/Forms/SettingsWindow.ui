@@ -845,10 +845,26 @@
                  </property>
                 </widget>
                </item>
-               <item row="5" column="1" colspan="2">
+               <item row="5" column="1">
                 <widget class="QCheckBox" name="chkTrayUseAlias">
                  <property name="text">
                   <string>Show box alias name instead of box name in tray list</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QSpinBox" name="spnTrayAliasChars">
+                 <property name="toolTip">
+                  <string>Maximum displayed characters for compact tray aliases. Ignored when alias display is disabled (name limit is fixed to 32).</string>
+                 </property>
+                 <property name="minimum">
+                  <number>32</number>
+                 </property>
+                 <property name="maximum">
+                  <number>256</number>
+                 </property>
+                 <property name="value">
+                  <number>64</number>
                  </property>
                 </widget>
                </item>

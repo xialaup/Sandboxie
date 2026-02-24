@@ -13,25 +13,62 @@ public:
 		return (mods & Qt::ControlModifier) != 0;
 	}
 
-protected:
-	bool viewportEvent(QEvent* e) override {
-		int tipMode = theConf ? theConf->GetInt("Options/TrayStatusTip", 1) : 1; // 0=never, 1=Ctrl key only, 2=always
+	static int GetTrayStatusTipMode()
+	{
+		int tipMode = theConf ? theConf->GetInt("Options/TrayStatusTip", 1) : 1; // 0=never, 1=Ctrl/Shift key only, 2=always
 		if (tipMode < 0 || tipMode > 2)
 			tipMode = 1;
+		return tipMode;
+	}
+
+	static int GetTrayAliasMaxChars(bool bTrayUseAlias)
+	{
+		if (!bTrayUseAlias)
+			return 32;
+		int iTrayAliasMaxChars = theConf ? theConf->GetInt("Options/TrayAliasMaxChars", 64) : 64;
+		if (iTrayAliasMaxChars < 32 || iTrayAliasMaxChars > 256)
+			iTrayAliasMaxChars = 64;
+		return iTrayAliasMaxChars;
+	}
+
+	static QString MakeTrayDisplayText(const QString& sourceText, int maxChars, bool* pTruncated = nullptr)
+	{
+		bool truncated = sourceText.length() > maxChars;
+		if (pTruncated)
+			*pTruncated = truncated;
+		if (!truncated)
+			return sourceText;
+		return sourceText.left(maxChars) + "…";
+	}
+
+protected:
+	bool viewportEvent(QEvent* e) override {
+		int tipMode = GetTrayStatusTipMode();
 
 		if (e->type() == QEvent::ToolTip) {
 			QHelpEvent* helpEvent = static_cast<QHelpEvent*>(e);
 			QTreeWidgetItem* item = itemAt(helpEvent->pos());
-			bool allowTip = tipMode == 2 || (tipMode == 1 && IsTrayStatusTipModifierActive());
-			if (!item || !allowTip) {
+			if (!item) {
 				QToolTip::hideText();
 				e->ignore();
 				return true;
 			}
 
-			QString tip = item->toolTip(0);
-			if (tip.isEmpty())
-				tip = item->text(0);
+			QString statusTip = item->toolTip(0);
+			QString fallbackTip = item->data(0, Qt::UserRole + 1).toString();
+			bool modifierActive = IsTrayStatusTipModifierActive();
+			QString tip;
+			if (!statusTip.isEmpty() && (tipMode == 2 || (tipMode == 1 && modifierActive)))
+				tip = statusTip;
+			else if (!fallbackTip.isEmpty() && (tipMode == 0 || tipMode == 1))
+				tip = fallbackTip;
+
+			if (tip.isEmpty()) {
+				QToolTip::hideText();
+				e->ignore();
+				return true;
+			}
+
 			QToolTip::showText(helpEvent->globalPos(), tip, viewport());
 			return true;
 		}
@@ -40,9 +77,7 @@ protected:
 	}
 
 	bool event(QEvent* e) override {
-		int tipMode = theConf ? theConf->GetInt("Options/TrayStatusTip", 1) : 1; // 0=never, 1=Ctrl key only, 2=always
-		if (tipMode < 0 || tipMode > 2)
-			tipMode = 1;
+		int tipMode = GetTrayStatusTipMode();
 
 		if ((e->type() == QEvent::KeyPress || e->type() == QEvent::KeyRelease) && tipMode == 1) {
 			QPoint localPos = viewport()->mapFromGlobal(QCursor::pos());
@@ -57,12 +92,16 @@ protected:
 				return QTreeWidget::event(e);
 			}
 
-			if (IsTrayStatusTipModifierActive()) {
-				QString tip = item->toolTip(0);
-				if (tip.isEmpty())
-					tip = item->text(0);
+			QString statusTip = item->toolTip(0);
+			QString fallbackTip = item->data(0, Qt::UserRole + 1).toString();
+			QString tip;
+			if (!statusTip.isEmpty() && IsTrayStatusTipModifierActive())
+				tip = statusTip;
+			else
+				tip = fallbackTip;
+
+			if (!tip.isEmpty())
 				QToolTip::showText(QCursor::pos(), tip, viewport());
-			}
 			else
 				QToolTip::hideText();
 		}
@@ -376,6 +415,9 @@ static QTreeWidgetItem* CSandMan__GetBoxParentTree(const QMap<QString, QStringLi
 			pParent = new QTreeWidgetItem();
 			pParent->setText(0, I.key());
 			pParent->setData(0, Qt::UserRole, I.key());
+			QFont fnt = pParent->font(0);
+			fnt.setBold(true);
+			pParent->setFont(0, fnt);
 
 			if (QTreeWidgetItem* pParent2 = CSandMan__GetBoxParentTree(Groups, GroupItems, pTree, I.key(), sortMode, ++Depth))
 				CSandMan__InsertGroupItemSorted(pTree, pParent2, pParent, I.key(), sortMode, Groups);
@@ -445,7 +487,13 @@ static QString CSandMan__BuildBoxTooltip(const CSandBoxPlus* pBoxEx)
 	if (!pBoxEx)
 		return QString();
 
-	QString tip = pBoxEx->GetName() + "\n";
+	QString boxName = pBoxEx->GetName();
+	QString boxAlias = pBoxEx->GetText("BoxAlias").trimmed();
+	QString boxAliasDisabled = pBoxEx->GetText("BoxAliasDisabled");
+	bool aliasEnabled = !boxAlias.isEmpty() && boxAliasDisabled.isEmpty();
+	QString tip = boxName + "\n";
+	if (aliasEnabled && boxAlias.compare(boxName, Qt::CaseSensitive) != 0)
+		tip += CSandMan::tr("    Alias: %1\n").arg(boxAlias);
 	tip += CSandMan::tr("    File root: %1\n").arg(pBoxEx->GetFileRoot());
 	tip += CSandMan::tr("    Registry root: %1\n").arg(pBoxEx->GetRegRoot());
 	tip += CSandMan::tr("    IPC root: %1\n").arg(pBoxEx->GetIpcRoot());
@@ -492,18 +540,24 @@ QAction* CSandMan__MakeBoxEntry(QMenu* pMenu, CSandBoxPlus* pBoxEx, QFileIconPro
 	static QMenu* pEmptyMenu = new QMenu();
 	if (!pBoxEx) return nullptr;
 
-	bool bTrayUseAlias = theConf->GetBool("Options/TrayUseAlias", true);
-	QAction* pBoxAction = new QAction(bTrayUseAlias ? pBoxEx->GetDisplayName() : pBoxEx->GetName());
+	bool bTrayUseAlias = theConf ? theConf->GetBool("Options/TrayUseAlias", true) : true;
+	QString displayNameRaw = bTrayUseAlias ? pBoxEx->GetDisplayName() : pBoxEx->GetName();
+	bool truncated = false;
+	QString displayName = CTrayTreeWidget::MakeTrayDisplayText(displayNameRaw, CTrayTreeWidget::GetTrayAliasMaxChars(bTrayUseAlias), &truncated);
+	QAction* pBoxAction = new QAction(displayName);
 	if (!iNoIcons) {
 		QIcon Icon;
-		bool bTrayIcons = theConf->GetBool("Options/TrayIcons", true);
+		bool bTrayIcons = theConf ? theConf->GetBool("Options/TrayIcons", true) : true;
 		if (bTrayIcons) {
 			QString boxIconStr   = pBoxEx->GetText("BoxIcon");
 			QString dblClickAct  = pBoxEx->GetText("DblClickAction");
-			Icon = CSandMan__GetCachedCustomIcon(pBoxEx->GetName(), boxIconStr, dblClickAct, pBoxEx, IconProvider, theGUI->m_TrayIconCache);
+			if (theGUI)
+				Icon = CSandMan__GetCachedCustomIcon(pBoxEx->GetName(), boxIconStr, dblClickAct, pBoxEx, IconProvider, theGUI->m_TrayIconCache);
 		}
 		if (Icon.isNull()) {
-			if (ColorIcons)
+			if (!theGUI)
+				Icon = QIcon();
+			else if (ColorIcons)
 				Icon = theGUI->GetColorIcon(pBoxEx->GetColor(), pBoxEx->GetActiveProcessCount());
 			else
 				Icon = theGUI->GetBoxIcon(pBoxEx->GetType(), pBoxEx->GetActiveProcessCount() != 0);
@@ -512,7 +566,10 @@ QAction* CSandMan__MakeBoxEntry(QMenu* pMenu, CSandBoxPlus* pBoxEx, QFileIconPro
 	}
 	pBoxAction->setData("box:" + pBoxEx->GetName());
 	pBoxAction->setMenu(pEmptyMenu);
-	// Always store rich tooltip; OnBoxMenuHover decides whether to display it
+	// Always store rich tooltip; OnBoxMenuHover decides whether to display it.
+	// When status tooltip mode is disabled, keep full-name tooltip only for truncated labels.
+	QString fallbackTip = truncated ? displayNameRaw : QString();
+	pBoxAction->setProperty("tray_fallback_tip", fallbackTip);
 	pBoxAction->setToolTip(CSandMan__BuildBoxTooltip(pBoxEx));
 	//connect(pBoxAction, SIGNAL(triggered()), this, SLOT(OnBoxMenu()));
 	return pBoxAction;
@@ -520,14 +577,34 @@ QAction* CSandMan__MakeBoxEntry(QMenu* pMenu, CSandBoxPlus* pBoxEx, QFileIconPro
 
 void CSandMan::CreateBoxMenu(QMenu* pMenu, int iOffset, int iSysTrayFilter)
 {
+	if (!pMenu || !theConf || !theAPI || !theGUI)
+		return;
+	auto pBoxView = theGUI->GetBoxView();
+	if (!pBoxView)
+		return;
+
+	QList<QAction*> actions = pMenu->actions();
+	if (iOffset < 0 || iOffset >= actions.count())
+		return;
+
 	int iNoIcons = theConf->GetInt("Options/NoIcons", 2);
 	if (iNoIcons == 2)
 		iNoIcons = theConf->GetInt("Options/ViewMode", 1) == 2 ? 1 : 0;
 	QFileIconProvider IconProvider;
 	bool ColorIcons = theConf->GetBool("Options/ColorBoxIcons", false);
 
-	while (!pMenu->actions().at(iOffset)->data().toString().isEmpty())
-		pMenu->removeAction(pMenu->actions().at(iOffset));
+	while (iOffset < pMenu->actions().count()) {
+		QAction* pAction = pMenu->actions().at(iOffset);
+		if (!pAction)
+			break;
+		if (!pAction->data().toString().isEmpty())
+			pMenu->removeAction(pAction);
+		else
+			break;
+	}
+
+	if (iOffset >= pMenu->actions().count())
+		return;
 
 	QAction* pPos = pMenu->actions().at(iOffset);
 
@@ -535,7 +612,7 @@ void CSandMan::CreateBoxMenu(QMenu* pMenu, int iOffset, int iSysTrayFilter)
 	QIcon Icon = QIcon(bPlus ? ":/Boxes/Group2" : ":/Boxes/Group"); // theGUI->GetBoxIcon(CSandBoxPlus::eDefault, false);
 
 	QList<CSandBoxPtr> Boxes = theAPI->GetAllBoxes().values(); // map is sorted by key (box name)
-	QMap<QString, QStringList> Groups = theGUI->GetBoxView()->GetGroups();
+	QMap<QString, QStringList> Groups = pBoxView->GetGroups();
 	int sortMode = CSandMan__GetTraySortMode(); // 0=manual, 1=asc, -1=desc
 
 	if (sortMode == 0) {
@@ -587,10 +664,17 @@ void CSandMan::OnBoxMenuHover(QAction* action)
 		QToolTip::hideText();
 		return;
 	}
+	if (!theGUI) {
+		QToolTip::hideText();
+		return;
+	}
+	auto pBoxView = theGUI->GetBoxView();
+	if (!pBoxView) {
+		QToolTip::hideText();
+		return;
+	}
 
-	int tipMode = theConf ? theConf->GetInt("Options/TrayStatusTip", 1) : 1;
-	if (tipMode < 0 || tipMode > 2)
-		tipMode = 1;
+	int tipMode = CTrayTreeWidget::GetTrayStatusTipMode();
 
 	if (action->data().type() != QVariant::String) {
 		QToolTip::hideText();
@@ -611,14 +695,21 @@ void CSandMan::OnBoxMenuHover(QAction* action)
 			pPrev->setMenu(new QMenu());
 		}
 		pPrev = action;
-		QMenu* pMenu = theGUI->GetBoxView()->GetMenu(Name);
+		QMenu* pMenu = pBoxView->GetMenu(Name);
 		action->setMenu(pMenu);
 	}
 
 	// Show rich tooltip manually — QAction+submenu combos don't auto-show Qt tooltips
-	if (!action->toolTip().isEmpty() &&
-		(tipMode == 2 || (tipMode == 1 && CTrayTreeWidget::IsTrayStatusTipModifierActive())))
-		QToolTip::showText(QCursor::pos() + QPoint(20, 0), action->toolTip());
+	QString statusTip = action->toolTip();
+	QString fallbackTip = action->property("tray_fallback_tip").toString();
+	QString tipToShow;
+	if (!statusTip.isEmpty() && (tipMode == 2 || (tipMode == 1 && CTrayTreeWidget::IsTrayStatusTipModifierActive())))
+		tipToShow = statusTip;
+	else if (tipMode == 0 || tipMode == 1)
+		tipToShow = fallbackTip;
+
+	if (!tipToShow.isEmpty())
+		QToolTip::showText(QCursor::pos() + QPoint(20, 0), tipToShow);
 	else
 		QToolTip::hideText();
 }
@@ -635,23 +726,28 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 	{
 		case QSystemTrayIcon::Context:
 		{
+			if (!theConf || !theAPI || !theGUI || !m_pTrayMenu)
+				break;
+
 			int iSysTrayFilter = theConf->GetInt("Options/SysTrayFilter", 0);
 
 			if(!m_pTrayBoxes)
 				CreateBoxMenu(m_pTrayMenu, m_iTrayPos, iSysTrayFilter);
 			else
 			{
+				auto pBoxView = theGUI->GetBoxView();
+				if (!pBoxView)
+					break;
+
 				QFileIconProvider IconProvider;
 				bool ColorIcons = theConf->GetBool("Options/ColorBoxIcons", false);
 				bool bTrayIcons = theConf->GetBool("Options/TrayIcons", true);
 				bool bTrayUseAlias = theConf->GetBool("Options/TrayUseAlias", true);
-				int iTrayStatusTip = theConf->GetInt("Options/TrayStatusTip", 1); // 0=never,1=Ctrl,2=always
-				if (iTrayStatusTip < 0 || iTrayStatusTip > 2)
-					iTrayStatusTip = 1;
+				int iTrayAliasMaxChars = CTrayTreeWidget::GetTrayAliasMaxChars(bTrayUseAlias);
 				m_pTrayBoxes->clear();
 
 				QList<CSandBoxPtr> Boxes = theAPI->GetAllBoxes().values(); // map is sorted by key (box name)
-				QMap<QString, QStringList> Groups = theGUI->GetBoxView()->GetGroups();
+				QMap<QString, QStringList> Groups = pBoxView->GetGroups();
 				int sortMode = CSandMan__GetTraySortMode(); // 0=manual, 1=asc, -1=desc
 
 				if (sortMode == 0) {
@@ -689,7 +785,9 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 					QTreeWidgetItem* pParent = CSandMan__GetBoxParentTree(Groups, GroupItems, m_pTrayBoxes, pBox->GetName(), sortMode);
 
 					QTreeWidgetItem* pItem = new QTreeWidgetItem();
-					QString displayName = bTrayUseAlias ? pBoxEx->GetDisplayName() : pBoxEx->GetName();
+					QString displayNameRaw = bTrayUseAlias ? pBoxEx->GetDisplayName() : pBoxEx->GetName();
+					bool truncated = false;
+					QString displayName = CTrayTreeWidget::MakeTrayDisplayText(displayNameRaw, iTrayAliasMaxChars, &truncated);
 					pItem->setText(0, displayName);
 					pItem->setData(0, Qt::UserRole, pBox->GetName());
 					QIcon Icon;
@@ -705,8 +803,9 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 							Icon = theGUI->GetBoxIcon(pBoxEx->GetType(), pBox->GetActiveProcessCount() != 0);
 					}
 					pItem->setData(0, Qt::DecorationRole, Icon);
-					// tipMode>=1: store rich tooltip; CTrayTreeWidget::event() handles Ctrl filtering
-					pItem->setToolTip(0, iTrayStatusTip >= 1 ? CSandMan__BuildBoxTooltip(pBoxEx.data()) : displayName);
+					// Store both status and truncation tooltips; view logic picks one by mode/modifier
+					pItem->setToolTip(0, CSandMan__BuildBoxTooltip(pBoxEx.data()));
+					pItem->setData(0, Qt::UserRole + 1, truncated ? displayNameRaw : QString());
 					if (pParent)
 						pParent->addChild(pItem);
 					else
@@ -825,7 +924,13 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 					m_pTrayBoxes->setFixedWidth(Width);
 
 					m_pTrayMenu->removeAction(m_pTrayList);
-					m_pTrayMenu->insertAction(m_pTrayMenu->actions().at(m_iTrayPos), m_pTrayList);
+					QAction* pInsertPos = (m_iTrayPos >= 0 && m_iTrayPos < m_pTrayMenu->actions().count())
+						? m_pTrayMenu->actions().at(m_iTrayPos)
+						: nullptr;
+					if (pInsertPos)
+						m_pTrayMenu->insertAction(pInsertPos, m_pTrayList);
+					else
+						m_pTrayMenu->addAction(m_pTrayList);
 
 					m_pTrayBoxes->setFocus();
 				}
@@ -843,7 +948,7 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 				StoreState();
 				hide();
 				
-				if (theAPI->GetGlobalSettings()->GetBool("ForgetPassword", false))
+				if (theAPI && theAPI->GetGlobalSettings() && theAPI->GetGlobalSettings()->GetBool("ForgetPassword", false))
 					theAPI->ClearPassword();
 
 				break;
@@ -864,13 +969,17 @@ void CSandMan::OnSysTray(QSystemTrayIcon::ActivationReason Reason)
 					SetForegroundWindow(MainWndHandle);
 				} );
 			}
-			m_pPopUpWindow->Poke();
+			if (m_pPopUpWindow)
+				m_pPopUpWindow->Poke();
 			break;
 	}
 }
 
 void CSandMan::OnBoxMenu(const QPoint& point)
 {
+	Q_UNUSED(point);
+	if (!m_pTrayBoxes || !m_pBoxView)
+		return;
 	QTreeWidgetItem* pItem = m_pTrayBoxes->currentItem();
 	if (!pItem)
 		return;
