@@ -1960,7 +1960,8 @@ void CSbieView::OnDoubleClicked(const QModelIndex& index)
 	CSandBoxPtr pBox = m_pSbieModel->GetSandBox(ModelIndex);
 
 	if (index.column() == CSbieModel::ePath) {
-		OnSandBoxAction(m_pMenuExplore, QList<CSandBoxPtr>() << pBox);
+		if (!pBox.isNull())
+			OnSandBoxAction(m_pMenuExplore, QList<CSandBoxPtr>() << pBox);
 		return;
 	}
 
