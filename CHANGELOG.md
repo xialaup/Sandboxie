@@ -15,14 +15,24 @@ This project adheres to [Semantic Versioning](http://semver.org/).
   - Global Settings > Interface Config > Window Options
 - added MIDI workaround template for Windows 11 [#5183](https://github.com/sandboxie-plus/Sandboxie/issues/5183) [#5203](https://github.com/sandboxie-plus/Sandboxie/issues/5203#issuecomment-3938495163) (thanks xsmolasses)
 - added "Label only" border mode option (`onlbl`, `ttllbl`, `alllbl`) that hides the colored border frame and shows only the sandbox name (or alias) label [#5239](https://github.com/sandboxie-plus/Sandboxie/pull/5239)
+- added new tray customization options (Global Settings > Shell Integration > System Tray): [#5254](https://github.com/sandboxie-plus/Sandboxie/pull/5254)
+  - "Show icons in tray context menu" (`Options/TrayIcons`) — controls whether custom sandbox icons are displayed in the tray menu.
+  - "Show box alias name instead of box name in tray" (`Options/TrayUseAlias`) — displays the configured alias/display name in both compact and regular tray menus.
+  - "Show sandbox status as tooltip in tray list" (`Options/TrayStatusTip`) now supports tri-state behavior: unchecked = never, partial = while Ctrl or Shift is held (default), checked = always.
+
+### Changed
+- reduced constant GUI CPU usage by caching custom `BoxIcon` resolution in the sandbox model instead of reloading icon resources on refresh
+- throttled internet connectivity check in SandMan main timer to once every 60 seconds and cache the result
+  - updater only runs when device has internet connectivity, eliminating wasted network attempts and reducing repeated `HKLM\\SYSTEM\\Setup\\SystemSetupInProgress` registry checks
+- changed duplicate sandbox behavior so active box aliases also receive the "Copy" suffix on duplication
+- changed tray sandbox/group ordering to mirror sandbox list mode (manual / ascending / descending), including group ordering
+- improved tray/sandbox submenu icon caching by resolving `DblClickAction` target paths (`GetCommandFile`) only on cache misses and caching `LoadWindowsIcon(path,index)` results for Run/Start menu entries, reducing repeated system icon extraction when opening menus
 
 ### Fixed
 - fixed false "Some changes haven't been saved yet" prompt when leaving Network Options with unlisted-process network mode set to non-default
 - fixed duplicated boxes not preserving the original box group assignment
-- reduced constant GUI CPU usage by caching custom `BoxIcon` resolution in the sandbox model instead of reloading icon resources on refresh
-- throttled internet connectivity check in SandMan main timer to once every 60 seconds and cache the result
-  - updater only runs when device has internet connectivity, eliminating wasted network attempts and reducing repeated `HKLM\\SYSTEM\\Setup\\SystemSetupInProgress` registry checks
-- fixex double-clicking on a group's empty path/command line crash [#5253](https://github.com/sandboxie-plus/Sandboxie/pull/5253)
+- fixed double-clicking on a group's empty path/command line crash [#5253](https://github.com/sandboxie-plus/Sandboxie/pull/5253)
+- fixed compact tray box list clipping long sandbox names; width is now measured precisely per item using font metrics and scales correctly at any DPI [#5254](https://github.com/sandboxie-plus/Sandboxie/pull/5254)
 
 
 

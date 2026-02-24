@@ -331,6 +331,8 @@ CSettingsWindow::CSettingsWindow(QWidget* parent)
 	ui.cmbTrayBoxes->addItem(tr("All Boxes"));
 	ui.cmbTrayBoxes->addItem(tr("Active + Pinned"));
 	ui.cmbTrayBoxes->addItem(tr("Pinned Only"));
+	ui.cmbTrayStatusTipModifier->addItem(tr("Ctrl"), "Ctrl");
+	ui.cmbTrayStatusTipModifier->addItem(tr("Shift"), "Shift");
 
 	ui.cmbOnClose->addItem(tr("Close to Tray"), "ToTray");
 	ui.cmbOnClose->addItem(tr("Prompt before Close"), "Prompt");
@@ -552,6 +554,19 @@ CSettingsWindow::CSettingsWindow(QWidget* parent)
 	connect(ui.chkSingleShow, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkTrayIcons, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
 	connect(ui.chkTrayUseAlias, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
+	connect(ui.chkTrayStatusTip, SIGNAL(stateChanged(int)), this, SLOT(OnOptChanged()));
+	connect(ui.cmbTrayStatusTipModifier, SIGNAL(currentIndexChanged(int)), this, SLOT(OnOptChanged()));
+	ui.chkTrayStatusTip->setTristate(true);
+	auto updateTrayStatusTipToolTip = [this]() {
+		QString modText = ui.cmbTrayStatusTipModifier->currentText();
+		if (modText.isEmpty())
+			modText = tr("Ctrl");
+		ui.chkTrayStatusTip->setToolTip(tr("Tri-state behavior: unchecked = never, partially checked = only while %1 is held (default), checked = always.").arg(modText));
+	};
+	connect(ui.cmbTrayStatusTipModifier, &QComboBox::currentTextChanged, this, [updateTrayStatusTipToolTip](const QString&) {
+		updateTrayStatusTipToolTip();
+	});
+	updateTrayStatusTipToolTip();
 	//
 
 	// Interface Config
@@ -1402,6 +1417,16 @@ void CSettingsWindow::LoadSettings()
 	ui.chkCompactTray->setChecked(theConf->GetBool("Options/CompactTray", false));
 	ui.chkTrayIcons->setChecked(theConf->GetBool("Options/TrayIcons", true));
 	ui.chkTrayUseAlias->setChecked(theConf->GetBool("Options/TrayUseAlias", true));
+	// 0=never, 1=Ctrl key (default, partial-checked), 2=always
+	int iTrayStatusTip = theConf->GetInt("Options/TrayStatusTip", 1);
+	if (iTrayStatusTip < 0 || iTrayStatusTip > 2)
+		iTrayStatusTip = 1;
+	ui.chkTrayStatusTip->setCheckState(Qt::CheckState(iTrayStatusTip));
+	QString trayStatusTipModifier = theConf->GetString("Options/TrayStatusTipModifier", "Ctrl");
+	int trayStatusTipModifierIndex = ui.cmbTrayStatusTipModifier->findData(trayStatusTipModifier);
+	if (trayStatusTipModifierIndex < 0)
+		trayStatusTipModifierIndex = ui.cmbTrayStatusTipModifier->findData("Ctrl");
+	ui.cmbTrayStatusTipModifier->setCurrentIndex(trayStatusTipModifierIndex);
 	ui.chkBoxOpsNotify->setChecked(theConf->GetBool("Options/AutoBoxOpsNotify", false));
 	ui.cmbOnClose->setCurrentIndex(ui.cmbOnClose->findData(theConf->GetString("Options/OnClose", "ToTray")));
 	ui.chkMinimize->setChecked(theConf->GetBool("Options/MinimizeToTray", false));
