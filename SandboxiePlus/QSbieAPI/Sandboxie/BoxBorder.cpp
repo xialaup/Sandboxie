@@ -612,6 +612,50 @@ void CBoxBorder::TimerProc()
 {
 	DWORD now = GetTickCount();
 
+	if (m_Api->GetAllProcesses().isEmpty())
+	{
+		// Transition: clean up borders on the first idle tick, then fast-return on all subsequent ones.
+		if (m->BorderMode != eBorderOff || m->MainBorder.visible || !m->BoxBorderWnds.empty())
+		{
+			m->pCurrentBox = NULL;
+			m->BorderMode = eBorderOff;
+			m->CachedFocusBoxMode = eBorderOff;
+			m->ActiveWnd = NULL;
+			m->ActivePid = 0;
+			m->FastTimerStartTicks = 0;
+
+			if (m->MainBorder.visible)
+			{
+				::ShowWindow(m->MainBorder.hWnd, SW_HIDE);
+				m->MainBorder.visible = FALSE;
+			}
+
+			for (auto it = m->BoxBorderWnds.begin(); it != m->BoxBorderWnds.end(); ++it)
+			{
+				if (it->second.hWnd)
+					DestroyWindow(it->second.hWnd);
+				if (it->second.labelFont)
+					DeleteObject(it->second.labelFont);
+			}
+			m->BoxBorderWnds.clear();
+
+			m->CachedHasGlobalAllMode = true;
+			m->CachedGlobalAllMode = false;
+			m->LastAllModeCheckTick = now;
+			m->AdaptiveGlobalAllModeCheckMs = kAdaptiveMaxMs;
+			m->AdaptiveSceneRefreshMs = kAdaptiveFastMs;
+			m->LastAllBordersSceneHash = 0;
+			m->LastAllBordersWindowCount = -1;
+			m->LastAllBordersRenderTick = 0;
+			m->AdaptiveOtherModeMs = kAdaptiveFastMs;
+		}
+
+		// Already idle: just back off the timer and return.
+		m->AdaptiveOtherModeMs = NextAdaptiveIntervalMs(m->AdaptiveOtherModeMs);
+		SetBorderTimerInterval(m, m->AdaptiveOtherModeMs);
+		return;
+	}
+
     if (m->FastTimerStartTicks && GetTickCount() - m->FastTimerStartTicks >= 1000) {
         m->FastTimerStartTicks = 0;
 		m->AdaptiveOtherModeMs = kAdaptiveFastMs;
