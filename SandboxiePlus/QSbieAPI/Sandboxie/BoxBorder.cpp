@@ -612,7 +612,12 @@ void CBoxBorder::TimerProc()
 {
 	DWORD now = GetTickCount();
 
-	if (m_Api->GetAllProcesses().isEmpty())
+	auto allProcesses = m_Api->GetAllProcesses();
+	bool bHasActiveProcess = false;
+	for (auto it = allProcesses.begin(); it != allProcesses.end(); ++it) {
+		if (!it.value()->IsTerminated()) { bHasActiveProcess = true; break; }
+	}
+	if (!bHasActiveProcess)
 	{
 		// Transition: clean up borders on the first idle tick, then fast-return on all subsequent ones.
 		if (m->BorderMode != eBorderOff || m->MainBorder.visible || !m->BoxBorderWnds.empty())
@@ -1439,6 +1444,8 @@ bool CBoxBorder::CheckGlobalAllBordersMode()
 	std::set<CSandBox*> checkedBoxes;
 	for (auto it = processes.begin(); it != processes.end(); ++it)
 	{
+		if (it.value()->IsTerminated())
+			continue;
 		CSandBox* pBox = it.value()->GetBoxPtr();
 		if (!pBox || checkedBoxes.find(pBox) != checkedBoxes.end())
 			continue;
