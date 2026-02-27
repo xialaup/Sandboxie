@@ -11,8 +11,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.17.3 / 5.72.3] - 2026-02-??
 
 ### Added
+
 - added configurable window location settings to control which monitor main, non-main, file recovery, and notification windows open on, including a selectable fallback mode. [#4536](https://github.com/sandboxie-plus/Sandboxie/issues/4536) [#5238](https://github.com/sandboxie-plus/Sandboxie/pull/5238)
   - Global Settings > Interface Config > Window Options
+- added "Label only" border mode option (`onlbl`, `ttllbl`, `alllbl`) that hides the colored border frame and shows only the sandbox name (or alias) label [#5239](https://github.com/sandboxie-plus/Sandboxie/pull/5239)
 - added MIDI workaround template for Windows 11 [#5183](https://github.com/sandboxie-plus/Sandboxie/issues/5183) [#5203](https://github.com/sandboxie-plus/Sandboxie/issues/5203#issuecomment-3938495163) (thanks xsmolasses)
 - added "Label only" border mode option (`onlbl`, `ttllbl`, `alllbl`) that hides the colored border frame and shows only the sandbox name (or alias) label [#5239](https://github.com/sandboxie-plus/Sandboxie/pull/5239)
 - added new tray customization options (Global Settings > Shell Integration > System Tray): [#5254](https://github.com/sandboxie-plus/Sandboxie/pull/5254)
@@ -34,6 +36,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fixed double-clicking on a group's empty path/command line crash [#5253](https://github.com/sandboxie-plus/Sandboxie/pull/5253)
 - fixed compact tray box list clipping long sandbox names; width is now measured precisely per item using font metrics and scales correctly at any DPI [#5254](https://github.com/sandboxie-plus/Sandboxie/pull/5254)
 - fixed handle leak in `ScanStartMenu`: `IShellLinkW` and `IPersistFile` COM interfaces were never released in `ResolveShortcut`, permanently retaining handles (file, registry, icon) for every `.lnk` shortcut scanned; replaced raw pointers with `CComPtr` to ensure `Release()` on all exit paths
+
+### Fixed
+- fixed false "Some changes haven't been saved yet" prompt when leaving Network Options with unlisted-process network mode set to non-default
+- fixed duplicated boxes not preserving the original box group assignment
 
 
 
