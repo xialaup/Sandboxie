@@ -3721,17 +3721,17 @@ Full path: %4</source>
     <message>
         <location filename="Windows/RenameSandboxDialog.cpp" line="17"/>
         <source>Sandboxie-Plus - Rename Sandbox</source>
-        <translation>Sandboxie-Plus - 重命名沙盒</translation>
+        <translation>Sandboxie-Plus - 重命名沙箱</translation>
     </message>
     <message>
         <location filename="Windows/RenameSandboxDialog.cpp" line="23"/>
         <source>When enabled, alias display is disabled for this sandbox.</source>
-        <translation>当启用时，别名显示被禁用于这个沙盒。</translation>
+        <translation>启用后，该沙箱将禁用别名显示。</translation>
     </message>
     <message>
         <location filename="Windows/RenameSandboxDialog.cpp" line="24"/>
         <source>Hide alias input in this dialog. This preference is remembered.</source>
-        <translation>隐藏这个对话框中的别名输入。这个首选项被记住了。</translation>
+        <translation>在此对话框中隐藏别名输入。此偏好会被记住。</translation>
     </message>
 </context>
 <context>
