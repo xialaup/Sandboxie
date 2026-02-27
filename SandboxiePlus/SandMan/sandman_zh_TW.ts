@@ -10316,7 +10316,7 @@ Enabling this option uses a LOW integrity token instead, which may improve compa
     <message>
         <location filename="Forms/OptionsWindow.ui" line="2086"/>
         <source>Use LOW integrity token instead of UNTRUSTED (reduces isolation)</source>
-        <translation>使用低等級完整性權杖而非不信任等級的 (降低隔離性)</translation>
+        <translation>使用低等級完整性權杖而非未信任等級的 (降低隔離性)</translation>
     </message>
     <message>
         <location filename="Forms/OptionsWindow.ui" line="4020"/>
