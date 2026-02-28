@@ -1212,17 +1212,23 @@ void CBoxBorder::DrawAllSandboxedBorders()
 						//    a hidden parking window and does NOT set WS_EX_TOOLWINDOW, so tests 1
 						//    and 2 may both miss it; this catches the rest.
 						//
+						// Exception for rules 1 & 3: class #32770 is the standard Windows dialog
+						//    class (DialogBox / CreateDialog). Such windows are always real dialogs
+						//    even when they lack WS_CAPTION (e.g. Vivaldi installer setup screen).
+						//
 						// Normal captioned windows (browsers, editors) never match any of these.
 						// Fullscreen games / WS_EX_APPWINDOW popups pass all three checks.
 
+						bool isSystemDialog = (wcscmp(className, L"#32770") == 0);
 						bool isMainWindow = true;
-						if (GetWindow(hWnd, GW_OWNER) != NULL && !(Style & WS_CAPTION))
+						if (GetWindow(hWnd, GW_OWNER) != NULL && !(Style & WS_CAPTION) && !isSystemDialog)
 							// Owned + no caption = toolbar/overlay/popup helper. Exclude.
 							// Owned + caption = proper dialog (Open File, Save, Print...). Allow.
+							// Owned + no caption + #32770 = standard captionless dialog. Allow.
 							isMainWindow = false;
 						else if ((ExStyle & WS_EX_TOOLWINDOW) && !(ExStyle & WS_EX_APPWINDOW))
 							isMainWindow = false;
-						else if ((Style & WS_POPUP) && !(Style & WS_CAPTION) && !(ExStyle & WS_EX_APPWINDOW))
+						else if ((Style & WS_POPUP) && !(Style & WS_CAPTION) && !(ExStyle & WS_EX_APPWINDOW) && !isSystemDialog)
 							isMainWindow = false;
 
 						if (!isMainWindow)
