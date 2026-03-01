@@ -6282,65 +6282,65 @@ Denne filen er en del av Sandboxie, og all endring gjort til den vil bli returne
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3657"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3660"/>
         <source>Autocomplete Consent Required</source>
         <translation>Autofullstendig samtykke kreves</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3135"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3144"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3138"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3147"/>
         <source>HwId: &lt;a href=&quot;show&quot;&gt;[%1]&lt;/a&gt;</source>
         <translation>HwId: &lt;a href=&quot;show&quot;&gt;[%1]&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3140"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3143"/>
         <source>HwId: &lt;a href=&quot;hide&quot; style=&quot;text-decoration:none; color:inherit;&quot;&gt;%1&lt;/a&gt; &lt;a href=&quot;copy&quot;&gt;(copy)&lt;/a&gt;</source>
         <translation>HwId: &lt;a href=&quot;hide&quot; style=&quot;text-decoration:none; color:inherit;&quot;&gt;%1&lt;/a&gt; &lt;a href=&quot;copy&quot;&gt;(kopi)&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3153"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3156"/>
         <source>Sandboxie-Plus Version: %1</source>
         <translation>Sandboxie-Plus versjon: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="926"/>
+        <location filename="Windows/SettingsWindow.cpp" line="927"/>
         <source>Search for settings</source>
         <translation>Søk etter innstillinger</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1300"/>
         <location filename="Windows/SettingsWindow.cpp" line="1301"/>
-        <location filename="Windows/SettingsWindow.cpp" line="1311"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1302"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1312"/>
         <source>Run &amp;Sandboxed</source>
         <translation>Kjør &amp;sandkasset</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1745"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1747"/>
         <source>kilobytes (%1)</source>
         <translation>kilobytes (%1)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1833"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1835"/>
         <source>Volume not attached</source>
         <translation>Volum ikke festet</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3219"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3222"/>
         <source>This supporter certificate has expired, please &lt;a href=&quot;%1&quot;&gt;get an updated certificate&lt;/a&gt;.</source>
         <translation>Dette støttesertifikatet er utløpt, vennligst &lt;a href=&quot;%1&quot;&gt;Få oppdatert sertifikat&lt;/a&gt;..</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3299"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3302"/>
         <source>&lt;b&gt;You have used %1/%2 evaluation certificates. No more free certificates can be generated.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Du har brukt %1/%2 vurderingsbevis. Det kan ikke genereres flere gratis sertifikater.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3301"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3304"/>
         <source>&lt;b&gt;&lt;a href=&quot;_&quot;&gt;Get a free evaluation certificate&lt;/a&gt; and enjoy all premium features for %1 days.&lt;/b&gt;</source>
         <translation>&lt;b&gt;&lt;a href=&quot;_&quot;&gt;Få en gratis evaluering sertifikat&lt;/a&gt; og nyt alle premiumfunksjoner for %1 Dager.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3232"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3235"/>
         <source>This supporter certificate will &lt;font color=&apos;red&apos;&gt;expire in %1 days&lt;/font&gt;, please &lt;a href=&quot;%2&quot;&gt;get an updated certificate&lt;/a&gt;.</source>
         <oldsource>This supporter certificate has expired, please &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-renew-cert&quot;&gt;get an updated certificate&lt;/a&gt;.</oldsource>
         <translation>Dette støttesertifikatet vil &lt;font color=&apos;red&apos;&gt;Utløp i %1 Dager&lt;/font&gt;, vær så snill &lt;a href=&quot;%2&quot;&gt;Få oppdatert sertifikat&lt;/a&gt;..</translation>
@@ -6362,58 +6362,58 @@ Denne filen er en del av Sandboxie, og all endring gjort til den vil bli returne
         <translation>Slå sammen alle grupper</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3132"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3135"/>
         <source>Click to reveal</source>
         <translation>Klikk for å avsløre</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3133"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3136"/>
         <source>Click to hide</source>
         <oldsource>Click to hide
 Right-click to copy</oldsource>
         <translation>Klikk for å skjule</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3267"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3270"/>
         <source>Expires in: %1 days</source>
         <oldsource>Expires: %1 Days ago</oldsource>
         <translation>Utløper i: %1 Dager</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3271"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3274"/>
         <source>; eligible Patreons can always &lt;a href=&quot;https://xanasoft.com/get-supporter-certificate/&quot;&gt;obtain an updated certificate&lt;/a&gt; from xanasoft.com</source>
         <translation>; kvalifiserte Patreons kan alltid &lt;a href=&quot;https://xanasoft.com/get-supporter-certificate/&quot;&gt;Få et oppdatert sertifikat&lt;/a&gt; fra xanasoft.com</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3283"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3286"/>
         <source>Options: %1</source>
         <translation>Valg: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3286"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
         <source>Security/Privacy Enhanced &amp; App Boxes (SBox): %1</source>
         <translation>Sikkerhet/Personlighet Forbedret og App Boxes (SBox): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3286"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3287"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3288"/>
         <location filename="Windows/SettingsWindow.cpp" line="3289"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3290"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3291"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3292"/>
         <source>Enabled</source>
         <translation>Aktivert</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="362"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3286"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3287"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3288"/>
         <location filename="Windows/SettingsWindow.cpp" line="3289"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3290"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3291"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3292"/>
         <source>Disabled</source>
         <translation>Deaktivert</translation>
     </message>
     <message>
         <location filename="Windows/SettingsWindow.cpp" line="334"/>
-        <location filename="Windows/SettingsWindow.cpp" line="571"/>
+        <location filename="Windows/SettingsWindow.cpp" line="572"/>
         <source>Ctrl</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6458,148 +6458,148 @@ Right-click to copy</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="572"/>
+        <location filename="Windows/SettingsWindow.cpp" line="573"/>
         <source>Tri-state behavior: unchecked = never, partially checked = only while %1 is held (default), checked = always.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3287"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3290"/>
         <source>Encrypted Sandboxes (EBox): %1</source>
         <translation>Krypterte sandkasser (EBox): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3288"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3291"/>
         <source>Network Interception (NetI): %1</source>
         <translation>Network Interception (NetI): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3289"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3292"/>
         <source>Sandboxie Desktop (Desk): %1</source>
         <translation>Sandboxie Desktop (Desk): %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3320"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3323"/>
         <source>This does not look like a Sandboxie-Plus Serial Number.&lt;br /&gt;If you have attempted to enter the UpdateKey or the Signature from a certificate, that is not correct, please enter the entire certificate into the text area above instead.</source>
         <translation>Dette ser ikke ut som en Sandboxie-Plus serienummer.&lt;br /&gt;Hvis du har forsøkt å angi UpdateKey eller Signaturen fra et sertifikat, som ikke er riktig, kan du angi hele sertifikatet i tekstområdet ovenfor i stedet.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3327"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3330"/>
         <source>You are attempting to use a feature Upgrade-Key without having entered a pre-existing supporter certificate. Please note that this type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b) requires you to have a pre-existing valid supporter certificate; it is useless without one.&lt;br /&gt;If you want to use the advanced features, you need to obtain both a standard certificate and the feature upgrade key to unlock advanced functionality.</source>
         <oldsource>You are attempting to use a feature Upgrade-Key without having entered a preexisting supporter certificate. Please note that these type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b&gt;) require you to have a preexisting valid supporter certificate, it is useless without one.&lt;br /&gt;If you want to use the advanced features you need to obtain booth a standard certificate and the feature upgrade key to unlock advanced functionality.</oldsource>
         <translation>Du prøver å bruke en funksjon Oppgrader-Key uten å ha skrevet inn et eksisterende støttesertifikat. Vær oppmerksom på at denne type nøkkel (&lt;b&gt;Som det klart står i drist på nettsiden&lt;/b) requires you to have a pre-existing valid supporter certificate; it is useless without one.&lt;br /&gt;Hvis du vil bruke avanserte funksjoner, må du få både et standardsertifikat og funksjonen oppgraderingsnøkkel for å låse opp avansert funksjonalitet.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3333"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3336"/>
         <source>You are attempting to use a Renew-Key without having entered a pre-existing supporter certificate. Please note that this type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b) requires you to have a pre-existing valid supporter certificate; it is useless without one.</source>
         <oldsource>You are attempting to use a Renew-Key without having a preexisting supporter certificate. Please note that these type of key (&lt;b&gt;as it is clearly stated in bold on the website&lt;/b&gt;) require you to have a preexisting supporter certificate, it is useless without one.</oldsource>
         <translation>Du prøver å bruke en Renew-Key uten å ha skrevet inn et eksisterende støttesertifikat. Vær oppmerksom på at denne type nøkkel (&lt;b&gt;som det er klart angitt i fed på nettstedet&lt;/b) krever at du har et eksisterende gyldig støttesertifikat; det er ubrukelig uten én.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3338"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3341"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;If you have not read the product description and obtained this key by mistake, please contact us via email (provided on our website) to resolve this issue.&lt;/u&gt;</source>
         <oldsource>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;If you have not read the product description and got this key by mistake, please contact us by email (provided on our website) to resolve this issue.&lt;/u&gt;</oldsource>
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;u&gt;Hvis du ikke har lest produktbeskrivelsen og oppnådd denne nøkkelen ved feil, vennligst kontakt oss via e-post (på vår hjemmeside) for å løse dette problemet.&lt;/u&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3369"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3372"/>
         <source>Sandboxie-Plus - Get EVALUATION Certificate</source>
         <translation>Sandboxie-Plus - Få EVALUATION sertifikat</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3369"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3372"/>
         <source>Please enter your email address to receive a free %1-day evaluation certificate, which will be issued to %2 and locked to the current hardware.
 You can request up to %3 evaluation certificates for each unique hardware ID.</source>
         <translation>Vennligst skriv inn e-postadressen din for å motta gratis %1-dag vurdering sertifikat, som vil bli utstedt til %2 og låst til den nåværende maskinvaren.
 Du kan be om opp til %3 vurdering sertifikater for hver unik maskinvare ID.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3395"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3398"/>
         <source>Error retrieving certificate: %1</source>
         <oldsource>Error retriving certificate: %1</oldsource>
         <translation>Feil ved henting av sertifikat: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3395"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3398"/>
         <source>Unknown Error (probably a network issue)</source>
         <translation>Ukjend feil (truleg et nettverksproblem)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3450"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3453"/>
         <source>Contributor</source>
         <translation>Deltaker</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3452"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3455"/>
         <source>Eternal</source>
         <translation>evig</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3454"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3457"/>
         <source>Developer</source>
         <translation>Utvikler</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3456"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3459"/>
         <source>Business</source>
         <translation>Forretning</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3458"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3461"/>
         <source>Personal</source>
         <translation>Personlig</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3460"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3463"/>
         <source>Great Patreon</source>
         <translation>Stor Patreon</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3462"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3465"/>
         <source>Patreon</source>
         <translation>Patreon</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3464"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3467"/>
         <source>Family</source>
         <translation>Familie</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3468"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3471"/>
         <source>Evaluation</source>
         <translation>Evaluering</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3470"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3473"/>
         <source>Type %1</source>
         <translation>Type %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3500"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3503"/>
         <source>Advanced</source>
         <translation>Avansert</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3502"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3505"/>
         <source>Advanced (L)</source>
         <translation>Avansert (L)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3504"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3507"/>
         <source>Max Level</source>
         <translation>Maks nivå</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3506"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3509"/>
         <source>Level %1</source>
         <translation>Nivå %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3659"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3662"/>
         <source>Autocomplete feature requires your consent to proceed.</source>
         <translation>Automatisk funksjon krever ditt samtykke til å fortsette.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3661"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3664"/>
         <source>If you are unsure about the settings displayed in the autocomplete popup, we strongly recommend consulting the software&apos;s documentation or source code before proceeding. Enabling this feature without proper understanding may lead to unintended consequences, for which you will be solely responsible.
 
 Choose autocomplete mode:
@@ -6612,63 +6612,63 @@ Velg autofullføringsmodus:
 %1 Mens du skriver: Autofullstendige forslag mens du skriver.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3669"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3672"/>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3670"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3673"/>
         <source>Triggers autocomplete suggestions with %1.</source>
         <translation>Triggers autokomplete forslag med %1..</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3672"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3675"/>
         <source>While Typing</source>
         <translation>Når du skriver</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3673"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3676"/>
         <source>Triggers autocomplete suggestions while typing.</source>
         <translation>Utløser autofullstendige forslag mens du skriver.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3676"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3679"/>
         <source>Keeps autocomplete suggestions disabled.</source>
         <translation>Holder autofullstendige forslag deaktivert.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3675"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3678"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1861"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1863"/>
         <source>Supporter certificate required for access</source>
         <translation>Kundesertifikat som kreves for tilgang</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1878"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1880"/>
         <source>Supporter certificate required for automation</source>
         <translation>Kundesertifikat som kreves for automatisering</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3545"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3548"/>
         <source>This certificate is unfortunately not valid for the current build, you need to get a new certificate or downgrade to an earlier build.</source>
         <translation>Dette sertifikatet er dessverre ikke gyldig for den gjeldende konstruksjonen, du må få et nytt sertifikat eller nedgradere til en tidligere bygg.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3547"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3550"/>
         <source>Although this certificate has expired, for the currently installed version plus features remain enabled. However, you will no longer have access to Sandboxie-Live services, including compatibility updates and the online troubleshooting database.</source>
         <translation>Selv om dette sertifikatet har gått ut, for den installerte versjonen pluss funksjoner forblir aktivert. Du vil imidlertid ikke lenger ha tilgang til Sandboxie-Live-tjenester, inkludert kompatibilitetsoppdateringer og online feilsøkingsdatabasen.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3549"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3552"/>
         <source>This certificate has unfortunately expired, you need to get a new certificate.</source>
         <translation>Dette sertifikatet har dessverre gått ut, du må få et nytt sertifikat.</translation>
     </message>
     <message>
         <location filename="Engine/BoxObject.cpp" line="91"/>
-        <location filename="Windows/SettingsWindow.cpp" line="1332"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1333"/>
         <source>Sandboxed Web Browser</source>
         <translation>Sandboxed nettleser</translation>
     </message>
@@ -6691,256 +6691,256 @@ Velg autofullføringsmodus:
         <translation>Last ned og installer</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="627"/>
+        <location filename="Windows/SettingsWindow.cpp" line="628"/>
         <source>Browse for Program</source>
         <translation>Bla gjennom programmet</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="746"/>
+        <location filename="Windows/SettingsWindow.cpp" line="747"/>
         <source>Add %1 Template</source>
         <translation>Legg til %1 Mal</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="612"/>
-        <location filename="Windows/SettingsWindow.cpp" line="792"/>
+        <location filename="Windows/SettingsWindow.cpp" line="613"/>
+        <location filename="Windows/SettingsWindow.cpp" line="793"/>
         <source>Select font</source>
         <translation>Velg skrifttype</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="614"/>
-        <location filename="Windows/SettingsWindow.cpp" line="794"/>
+        <location filename="Windows/SettingsWindow.cpp" line="615"/>
+        <location filename="Windows/SettingsWindow.cpp" line="795"/>
         <source>Reset font</source>
         <translation>Nullstill skrift</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="940"/>
+        <location filename="Windows/SettingsWindow.cpp" line="941"/>
         <source>%0, %1 pt</source>
         <translation>%0, %1 pt</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1181"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1182"/>
         <source>Please enter message</source>
         <translation>Vennligst skriv inn melding</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1213"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1214"/>
         <source>Select Program</source>
         <translation>Velg program</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1213"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1214"/>
         <source>Executables (*.exe *.cmd)</source>
         <translation>Brukere (*.exe *.cmd)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1217"/>
-        <location filename="Windows/SettingsWindow.cpp" line="1233"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1218"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1234"/>
         <source>Please enter a menu title</source>
         <translation>Vennligst skriv inn en menytittel</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1229"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1230"/>
         <source>Please enter a command</source>
         <translation>Vennligst skriv inn en kommando</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3224"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3227"/>
         <source>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;For the current build Plus features remain enabled&lt;/font&gt;, but you no longer have access to Sandboxie-Live services, including compatibility updates and the online troubleshooting database.</source>
         <translation>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;For de nåværende bygge Plus-funksjonene forblir aktivert&lt;/font&gt;, men du har ikke lenger tilgang til Sandboxie-Live-tjenester, inkludert kompatibilitetsoppdateringer og online feilsøkingsdatabasen.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3302"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3305"/>
         <source>You can request a free %1-day evaluation certificate up to %2 times per hardware ID.</source>
         <translation>Du kan be om gratis %1-dag vurdering sertifikat opp til %2 ganger per maskinvare-ID.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3222"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3225"/>
         <source>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;Plus features will be disabled in %1 days.&lt;/font&gt;</source>
         <translation>&lt;br /&gt;&lt;font color=&apos;red&apos;&gt;Plus-funksjoner vil bli deaktivert i %1 Dager.&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3226"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3229"/>
         <source>&lt;br /&gt;Plus features are no longer enabled.</source>
         <translation>&lt;br /&gt;Pluss funksjoner er ikke lenger aktivert.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3269"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3272"/>
         <source>Expired: %1 days ago</source>
         <translation>Utløpt: %1 dager siden</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3353"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3381"/>
-        <location filename="Windows/SettingsWindow.cpp" line="3610"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3356"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3384"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3613"/>
         <source>Retrieving certificate...</source>
         <translation>Henter sertifikat...</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3466"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3469"/>
         <source>Home</source>
         <translation>Hjem</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="1995"/>
+        <location filename="Windows/SettingsWindow.cpp" line="1997"/>
         <source>Run &amp;Un-Sandboxed</source>
         <translation>Kjør &amp; usandkasset</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2003"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2005"/>
         <source>Set Force in Sandbox</source>
         <translation>Sett Force i Sandbox</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2012"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2014"/>
         <source>Set Open Path in Sandbox</source>
         <translation>Sett åpen bane i Sandbox</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3528"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3531"/>
         <source>This does not look like a certificate. Please enter the entire certificate, not just a portion of it.</source>
         <translation>Dette ser ikke ut som et sertifikat. Vennligst skriv inn hele sertifikatet, ikke bare en del av det.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3553"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3556"/>
         <source>The evaluation certificate has been successfully applied. Enjoy your free trial!</source>
         <translation>Evalueringssertifikatet har blitt anvendt. Nyt din gratis prøveperiode!</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3556"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3559"/>
         <source>Thank you for supporting the development of Sandboxie-Plus.</source>
         <translation>Takk for at du sender inn en endring.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3558"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3561"/>
         <source>
 This is a temporary Patreon certificate, valid for 3 months. Once it nears expiration, you can obtain a new certificate online that will be valid for the full term.</source>
         <translation>
 Dette er et midlertidig Patreon-sertifikat, gyldig i 3 måneder. Når det nærmer seg utløp, kan du få et nytt sertifikat på nettet som vil være gyldig for hele begrepet.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3596"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3599"/>
         <source>A mandatory security update for your Sandboxie-Plus Supporter Certificate is required. Would you like to download the updated certificate now?</source>
         <translation>Det kreves en obligatorisk sikkerhetsoppdatering for ditt Sandboxie-Plus-støttesertifikat. Vil du laste ned det oppdaterte sertifikatet nå?</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3597"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3600"/>
         <source>Auto update in future</source>
         <translation>Autooppdatering i fremtiden</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2380"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2383"/>
         <source>Update Available</source>
         <translation>Oppdatering tilgjengelig</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2382"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2385"/>
         <source>Installed</source>
         <translation>Installert</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2387"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2390"/>
         <source>by %1</source>
         <translation>ved %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2395"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2398"/>
         <source>(info website)</source>
         <translation>(info nettsted)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2422"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2425"/>
         <source>This Add-on is mandatory and can not be removed.</source>
         <translation>Dette tillegget er obligatorisk og kan ikke fjernes.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2431"/>
-        <location filename="Windows/SettingsWindow.cpp" line="2642"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2434"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2645"/>
         <source>Select Directory</source>
         <translation>Velg mappe</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2463"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2466"/>
         <source>&lt;a href=&quot;check&quot;&gt;Check Now&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;check&quot;&gt;Sjekk nå&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2532"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2535"/>
         <source>Select Portable Box ini</source>
         <translation>Velg bærbar boks ii</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2532"/>
-        <location filename="Windows/SettingsWindow.cpp" line="2542"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2535"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2545"/>
         <source>Ini Files (*.ini)</source>
         <translation>Ini-filer (*.ini)</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2542"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2545"/>
         <source>Save new Portable Box ini</source>
         <translation>Lagre ny Portable Box ini</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2547"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2550"/>
         <source>File already exists, please select a different file name.</source>
         <translation>Filen eksisterer allerede. Velg et annet filnamn.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2553"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2556"/>
         <source>Invalid box name</source>
         <translation>Ugyldig boksnavn</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2574"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2577"/>
         <source>Select Root Folder</source>
         <translation>Velg rotmappe</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2602"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2605"/>
         <source>Please enter the new configuration password.</source>
         <translation>Skriv inn det nye konfigurasjonspassordet.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2606"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2609"/>
         <source>Please re-enter the new configuration password.</source>
         <translation>Vennligst skriv inn det nye konfigurasjonspassordet igjen.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2611"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2614"/>
         <source>Passwords did not match, please retry.</source>
         <translation>Passord ikke matchet, vennligst prøv igjen.</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2623"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2626"/>
         <source>Process</source>
         <translation>Prosess</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2623"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2626"/>
         <source>Folder</source>
         <translation>Mappe</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2633"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2636"/>
         <source>Please enter a program file name</source>
         <translation>Vennligst skriv inn et programfilnavn</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2701"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2704"/>
         <source>Please enter the template identifier</source>
         <translation>Skriv inn malidentifikatoren</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2709"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2712"/>
         <source>Error: %1</source>
         <translation>Feil: %1</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="2741"/>
+        <location filename="Windows/SettingsWindow.cpp" line="2744"/>
         <source>Do you really want to delete the selected local template(s)?</source>
         <translation>Vil du virkelig slette den valgte lokale malen?</translation>
     </message>
     <message>
-        <location filename="Windows/SettingsWindow.cpp" line="3061"/>
+        <location filename="Windows/SettingsWindow.cpp" line="3064"/>
         <source>%1 (Current)</source>
         <translation>%1 (Foreløpig)</translation>
     </message>
@@ -10540,47 +10540,47 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Vis et brettvarsel når automatiske boksoperasjoner startes</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1106"/>
+        <location filename="Forms/SettingsWindow.ui" line="1113"/>
         <source>* a partially checked checkbox will leave the behavior to be determined by the view mode.</source>
         <translation>* En delvis merket avkryssingsboks vil la oppførselen bestemmes av visningsmodusen.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2365"/>
+        <location filename="Forms/SettingsWindow.ui" line="2372"/>
         <source>Advanced Config</source>
         <translation>Avansert konfigurasjon</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2485"/>
+        <location filename="Forms/SettingsWindow.ui" line="2492"/>
         <source>Activate Kernel Mode Object Filtering</source>
         <translation>Aktiver Kernelmodusobjektfiltrering</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2505"/>
+        <location filename="Forms/SettingsWindow.ui" line="2512"/>
         <source>Sandbox &lt;a href=&quot;sbie://docs/filerootpath&quot;&gt;file system root&lt;/a&gt;: </source>
         <translation>Sandbox &lt;a href=&quot;sbie://docs/filerootpath&quot;&gt;filsystemrot&lt;/a&gt;:) </translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2768"/>
+        <location filename="Forms/SettingsWindow.ui" line="2775"/>
         <source>Clear password when main window becomes hidden</source>
         <translation>Tøm passordet når hovedvinduet blir skjult</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2582"/>
+        <location filename="Forms/SettingsWindow.ui" line="2589"/>
         <source>Sandbox &lt;a href=&quot;sbie://docs/ipcrootpath&quot;&gt;ipc root&lt;/a&gt;: </source>
         <translation>Sandbox &lt;a href=&quot;sbie://docs/ipcrootpath&quot;&gt;ipc rot&lt;/a&gt;:) </translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2438"/>
+        <location filename="Forms/SettingsWindow.ui" line="2445"/>
         <source>Sandbox default</source>
         <translation>Sandkasse standard</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2761"/>
+        <location filename="Forms/SettingsWindow.ui" line="2768"/>
         <source>Config protection</source>
         <translation>Konfigurer beskyttelse</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2604"/>
+        <location filename="Forms/SettingsWindow.ui" line="2611"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -10635,232 +10635,232 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Windows Shell</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="972"/>
+        <location filename="Forms/SettingsWindow.ui" line="979"/>
         <source>Move Up</source>
         <translation>Flytt opp</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="991"/>
+        <location filename="Forms/SettingsWindow.ui" line="998"/>
         <source>Move Down</source>
         <translation>Flytt ned</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1116"/>
+        <location filename="Forms/SettingsWindow.ui" line="1123"/>
         <source>Show overlay icons for boxes and processes</source>
         <translation>Vis overleggsikon for bokser og prosesser</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1140"/>
+        <location filename="Forms/SettingsWindow.ui" line="1147"/>
         <source>Hide Sandboxie&apos;s own processes from the task list</source>
         <oldsource>Hide sandboxie&apos;s own processes from the task list</oldsource>
         <translation>Skjul Sandboxies egne prosesser fra oppgavelisten</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1186"/>
-        <location filename="Forms/SettingsWindow.ui" line="1216"/>
+        <location filename="Forms/SettingsWindow.ui" line="1193"/>
+        <location filename="Forms/SettingsWindow.ui" line="1223"/>
         <source>Interface Options</source>
         <oldsource>Display Options</oldsource>
         <translation>Grensesnittalternativer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1257"/>
+        <location filename="Forms/SettingsWindow.ui" line="1264"/>
         <source>Ini Editor Font</source>
         <translation>Ini Editor Font</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1346"/>
+        <location filename="Forms/SettingsWindow.ui" line="1353"/>
         <source>Graphic Options</source>
         <translation>Grafiske alternativer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1289"/>
+        <location filename="Forms/SettingsWindow.ui" line="1296"/>
         <source>Select font</source>
         <translation>Velg skrifttype</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1299"/>
+        <location filename="Forms/SettingsWindow.ui" line="1306"/>
         <source>Reset font</source>
         <translation>Nullstill skrift</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1392"/>
-        <location filename="Forms/SettingsWindow.ui" line="1455"/>
+        <location filename="Forms/SettingsWindow.ui" line="1399"/>
+        <location filename="Forms/SettingsWindow.ui" line="1462"/>
         <source>#</source>
         <translation>#</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1244"/>
+        <location filename="Forms/SettingsWindow.ui" line="1251"/>
         <source>External Ini Editor</source>
         <translation>Ekstern ini-redigering</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1662"/>
+        <location filename="Forms/SettingsWindow.ui" line="1669"/>
         <source>Add-Ons Manager</source>
         <translation>Add-Ons Manager</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1672"/>
+        <location filename="Forms/SettingsWindow.ui" line="1679"/>
         <source>Optional Add-Ons</source>
         <translation>Valgfrie tillegg</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1680"/>
+        <location filename="Forms/SettingsWindow.ui" line="1687"/>
         <source>Sandboxie-Plus offers numerous options and supports a wide range of extensions. On this page, you can configure the integration of add-ons, plugins, and other third-party components. Optional components can be downloaded from the web, and certain installations may require administrative privileges.</source>
         <translation>Sandboxie-Plus tilbyr mange alternativer og støtter et bredt spekter av utvidelser. På denne siden kan du konfigurere integrasjonen av tillegg, plugins og andre tredjepartskomponenter. Valgfrie komponenter kan lastes ned fra nettet, og visse installasjoner kan kreve administrative privilegier.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1716"/>
+        <location filename="Forms/SettingsWindow.ui" line="1723"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1721"/>
+        <location filename="Forms/SettingsWindow.ui" line="1728"/>
         <source>Version</source>
         <translation>Utgave</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1726"/>
+        <location filename="Forms/SettingsWindow.ui" line="1733"/>
         <source>Description</source>
         <translation>Beskrivelse</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1734"/>
+        <location filename="Forms/SettingsWindow.ui" line="1741"/>
         <source>&lt;a href=&quot;sbie://addons&quot;&gt;update add-on list now&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;sbie://addons&quot;&gt;oppdater add-on-listen nå&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1744"/>
+        <location filename="Forms/SettingsWindow.ui" line="1751"/>
         <source>Install</source>
         <translation>Installer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1754"/>
+        <location filename="Forms/SettingsWindow.ui" line="1761"/>
         <source>Add-On Configuration</source>
         <translation>Add-On-oppsett</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1762"/>
+        <location filename="Forms/SettingsWindow.ui" line="1769"/>
         <source>Enable Ram Disk creation</source>
         <translation>Aktiver opprettelse av Ram Disk</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1769"/>
+        <location filename="Forms/SettingsWindow.ui" line="1776"/>
         <source>kilobytes</source>
         <translation>kilobytes</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1822"/>
+        <location filename="Forms/SettingsWindow.ui" line="1829"/>
         <source>Disk Image Support</source>
         <translation>Støtte for diskbilde</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1839"/>
+        <location filename="Forms/SettingsWindow.ui" line="1846"/>
         <source>RAM Limit</source>
         <translation>RAM-grense</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1806"/>
+        <location filename="Forms/SettingsWindow.ui" line="1813"/>
         <source>&lt;a href=&quot;addon://ImDisk&quot;&gt;Install ImDisk&lt;/a&gt; driver to enable Ram Disk and Disk Image support.</source>
         <translation>&lt;a href=&quot;addon://ImDisk&quot;&gt;Installer ImDisk&lt;/a&gt; driver for å aktivere støtte for Ram Disk og Disk Image.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1892"/>
+        <location filename="Forms/SettingsWindow.ui" line="1899"/>
         <source>Sandboxie Support</source>
         <translation>Støtte for Sandboxie</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1981"/>
+        <location filename="Forms/SettingsWindow.ui" line="1988"/>
         <source>This supporter certificate has expired, please &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-renew-cert&quot;&gt;get an updated certificate&lt;/a&gt;.</source>
         <translation>Dette støttesertifikatet er utløpt, vennligst &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-renew-cert&quot;&gt;Få oppdatert sertifikat&lt;/a&gt;..</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2048"/>
+        <location filename="Forms/SettingsWindow.ui" line="2055"/>
         <source>Supporters of the Sandboxie-Plus project can receive a &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-cert&quot;&gt;supporter certificate&lt;/a&gt;. It&apos;s like a license key but for awesome people using open source software. :-)</source>
         <translation>Støttere av Sandboxie-Plus-prosjektet kan motta en &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-cert&quot;&gt;støttesertifikat&lt;/a&gt;. Det er som en lisensnøkkel, men for fantastiske mennesker som bruker åpen kildekode programvare. :-)</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1929"/>
+        <location filename="Forms/SettingsWindow.ui" line="1936"/>
         <source>Get</source>
         <translation>Hent</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2071"/>
+        <location filename="Forms/SettingsWindow.ui" line="2078"/>
         <source>Retrieve/Upgrade/Renew certificate using Serial Number</source>
         <translation>Hent/Oppgrader/Forny sertifikat ved hjelp av serienummer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2016"/>
+        <location filename="Forms/SettingsWindow.ui" line="2023"/>
         <source>Keeping Sandboxie up to date with the rolling releases of Windows and compatible with all web browsers is a never-ending endeavor. You can support the development by &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-contribute&quot;&gt;directly contributing to the project&lt;/a&gt;, showing your support by &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-obtain-cert&quot;&gt;purchasing a supporter certificate&lt;/a&gt;, becoming a patron by &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=patreon&quot;&gt;subscribing on Patreon&lt;/a&gt;, or through a &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=donate&quot;&gt;PayPal donation&lt;/a&gt;.&lt;br /&gt;Your support plays a vital role in the advancement and maintenance of Sandboxie.</source>
         <translation>Å holde Sandboxie oppdatert med de rullende utgivelsene av Windows og kompatibel med alle nettlesere er et aldri sluttende forsøk. Du kan støtte utviklingen av &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-contribute&quot;&gt;direkte bidra til prosjektet&lt;/a&gt;Viser din støtte fra &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-obtain-cert&quot;&gt;Kjøpe et støttesertifikat&lt;/a&gt;å bli en beskytter av &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=patreon&quot;&gt;Abonner på Patreon&lt;/a&gt;eller gjennom en &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=donate&quot;&gt;PayPal-donasjon&lt;/a&gt;..&lt;br /&gt;Din støtte spiller en viktig rolle i utvikling og vedlikehold av Sandboxie.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1915"/>
+        <location filename="Forms/SettingsWindow.ui" line="1922"/>
         <source>SBIE_-_____-_____-_____-_____</source>
         <translation>SBIE -                   </translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2081"/>
+        <location filename="Forms/SettingsWindow.ui" line="2088"/>
         <source>Eval Cert</source>
         <translation>Eval Cert</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2177"/>
+        <location filename="Forms/SettingsWindow.ui" line="2184"/>
         <source>Update Settings</source>
         <translation>Oppdater innstillinger</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2334"/>
+        <location filename="Forms/SettingsWindow.ui" line="2341"/>
         <source>Update Check Interval</source>
         <translation>Oppdateringskontrollintervall</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2383"/>
+        <location filename="Forms/SettingsWindow.ui" line="2390"/>
         <source>Sandbox &lt;a href=&quot;sbie://docs/keyrootpath&quot;&gt;registry root&lt;/a&gt;: </source>
         <translation>Sandbox &lt;a href=&quot;sbie://docs/keyrootpath&quot;&gt;registerrot&lt;/a&gt;:) </translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2575"/>
+        <location filename="Forms/SettingsWindow.ui" line="2582"/>
         <source>Sandboxing features</source>
         <translation>Sandboxing funksjoner</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2748"/>
+        <location filename="Forms/SettingsWindow.ui" line="2755"/>
         <source>Change Password</source>
         <translation>Endre passord</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2662"/>
+        <location filename="Forms/SettingsWindow.ui" line="2669"/>
         <source>Password must be entered in order to make changes</source>
         <translation>Passord må skrives inn for å gjøre endringer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2721"/>
+        <location filename="Forms/SettingsWindow.ui" line="2728"/>
         <source>Only Administrator user accounts can make changes</source>
         <translation>Kun administrator brukerkontoer kan gjøre endringer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2792"/>
+        <location filename="Forms/SettingsWindow.ui" line="2799"/>
         <source>Watch Sandboxie.ini for changes</source>
         <translation>Se Sandboxie.ini for endringer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3063"/>
+        <location filename="Forms/SettingsWindow.ui" line="3070"/>
         <source>App Templates</source>
         <translation>Appmaler</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3073"/>
+        <location filename="Forms/SettingsWindow.ui" line="3080"/>
         <source>App Compatibility</source>
         <translation>App-kompatibilitet</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2728"/>
+        <location filename="Forms/SettingsWindow.ui" line="2735"/>
         <source>Only Administrator user accounts can use Pause Forcing Programs command</source>
         <oldsource>Only Administrator user accounts can use Pause Forced Programs Rules command</oldsource>
         <translation>Bare Administrator-brukerkontoer kan bruke kommandoen Pause Forcing Programs</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2521"/>
+        <location filename="Forms/SettingsWindow.ui" line="2528"/>
         <source>Portable root folder</source>
         <translation>Portabel rotmappe</translation>
     </message>
@@ -10880,12 +10880,12 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Vis ikon i Systray:</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2548"/>
+        <location filename="Forms/SettingsWindow.ui" line="2555"/>
         <source>Use Windows Filtering Platform to restrict network access</source>
         <translation>Bruk Windows Filtrering Platform til å begrense nettverkstilgang</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2538"/>
+        <location filename="Forms/SettingsWindow.ui" line="2545"/>
         <source>Hook selected Win32k system calls to enable GPU acceleration (required for chrome, firefox and more)</source>
         <oldsource>Hook selected Win32k system calls to enable GPU acceleration (experimental)</oldsource>
         <translation>Krok valgte Win32k systemsamtaler for å aktivere GPU akselerasjon (krevet for krom, brannfox og mer)</translation>
@@ -10902,47 +10902,47 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Bruk Compact Box Liste</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1045"/>
+        <location filename="Forms/SettingsWindow.ui" line="1052"/>
         <source>Interface Config</source>
         <translation>Grensesnittoppsett</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1123"/>
+        <location filename="Forms/SettingsWindow.ui" line="1130"/>
         <source>Make Box Icons match the Border Color</source>
         <translation>Make Box Ikoner matcher grensefargen</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1130"/>
+        <location filename="Forms/SettingsWindow.ui" line="1137"/>
         <source>Use a Page Tree in the Box Options instead of Nested Tabs *</source>
         <translation>Bruk et sidetre i boksen Alternativer i stedet for innebygde faner *</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1154"/>
+        <location filename="Forms/SettingsWindow.ui" line="1161"/>
         <source>Use large icons in box list *</source>
         <translation>Bruk store ikoner i bokslisten *</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1224"/>
+        <location filename="Forms/SettingsWindow.ui" line="1231"/>
         <source>High DPI Scaling</source>
         <translation>Høy DPI-skalering</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1164"/>
+        <location filename="Forms/SettingsWindow.ui" line="1171"/>
         <source>Don&apos;t show icons in menus *</source>
         <translation>Ikke vis ikoner i menyer *</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1086"/>
+        <location filename="Forms/SettingsWindow.ui" line="1093"/>
         <source>Use Dark Theme</source>
         <translation>Bruk mørke tema</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1379"/>
+        <location filename="Forms/SettingsWindow.ui" line="1386"/>
         <source>Font Scaling</source>
         <translation>Skriftskalering</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1415"/>
+        <location filename="Forms/SettingsWindow.ui" line="1422"/>
         <source>(Restart required)</source>
         <translation>(Restart nødvendig)</translation>
     </message>
@@ -10952,67 +10952,67 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Vis gjenopprettingsvinduet som alltid på toppen</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1063"/>
+        <location filename="Forms/SettingsWindow.ui" line="1070"/>
         <source>Show &quot;Pizza&quot; Background in box list *</source>
         <oldsource>Show &quot;Pizza&quot; Background in box list*</oldsource>
         <translation>Vis &quot;Pizza&quot; Bakgrunn i bokslisten *</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1237"/>
+        <location filename="Forms/SettingsWindow.ui" line="1244"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1147"/>
+        <location filename="Forms/SettingsWindow.ui" line="1154"/>
         <source>Alternate row background in lists</source>
         <translation>Alternativ rad bakgrunn i lister</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1096"/>
+        <location filename="Forms/SettingsWindow.ui" line="1103"/>
         <source>Use Fusion Theme</source>
         <translation>Bruk Fusion-tema</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="915"/>
-        <location filename="Forms/SettingsWindow.ui" line="1711"/>
-        <location filename="Forms/SettingsWindow.ui" line="2901"/>
-        <location filename="Forms/SettingsWindow.ui" line="3104"/>
-        <location filename="Forms/SettingsWindow.ui" line="3264"/>
+        <location filename="Forms/SettingsWindow.ui" line="922"/>
+        <location filename="Forms/SettingsWindow.ui" line="1718"/>
+        <location filename="Forms/SettingsWindow.ui" line="2908"/>
+        <location filename="Forms/SettingsWindow.ui" line="3111"/>
+        <location filename="Forms/SettingsWindow.ui" line="3271"/>
         <source>Name</source>
         <translation>Navn</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2906"/>
+        <location filename="Forms/SettingsWindow.ui" line="2913"/>
         <source>Path</source>
         <translation>Sti</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2865"/>
+        <location filename="Forms/SettingsWindow.ui" line="2872"/>
         <source>Remove Program</source>
         <translation>Fjern programmet</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2886"/>
+        <location filename="Forms/SettingsWindow.ui" line="2893"/>
         <source>Add Program</source>
         <translation>Legg til program</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2855"/>
+        <location filename="Forms/SettingsWindow.ui" line="2862"/>
         <source>When any of the following programs is launched outside any sandbox, Sandboxie will issue message SBIE1301.</source>
         <translation>Når noen av følgende programmer lanseres utenfor hvilken som helst sandkasse, vil Sandboxie utstede melding SBIE1301.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2879"/>
+        <location filename="Forms/SettingsWindow.ui" line="2886"/>
         <source>Add Folder</source>
         <translation>Legg til mappe</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2835"/>
+        <location filename="Forms/SettingsWindow.ui" line="2842"/>
         <source>Prevent the listed programs from starting on this system</source>
         <translation>Unngå at de oppførte programmene starter på dette systemet</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2893"/>
+        <location filename="Forms/SettingsWindow.ui" line="2900"/>
         <source>Issue message 1308 when a program fails to start</source>
         <translation>Sende melding 1308 når et program ikke starter</translation>
     </message>
@@ -11047,27 +11047,27 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Integrer med vertsstartmenyen</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1193"/>
+        <location filename="Forms/SettingsWindow.ui" line="1200"/>
         <source>Use new config dialog layout *</source>
         <translation>Bruk ny oppsettsdialoglayout *</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2817"/>
+        <location filename="Forms/SettingsWindow.ui" line="2824"/>
         <source>Program Control</source>
         <translation>Programkontroll</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2827"/>
+        <location filename="Forms/SettingsWindow.ui" line="2834"/>
         <source>Program Alerts</source>
         <translation>Programvarsler</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2872"/>
+        <location filename="Forms/SettingsWindow.ui" line="2879"/>
         <source>Issue message 1301 when forced processes has been disabled</source>
         <translation>Problemmelding 1301 når tvangsprosesser er deaktivert</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2375"/>
+        <location filename="Forms/SettingsWindow.ui" line="2382"/>
         <source>Sandboxie Config</source>
         <oldsource>Config Protection</oldsource>
         <translation>Sandboxie Config</translation>
@@ -11083,34 +11083,34 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Trykk på pop-up-varsler når du er i spill-/presentasjonsmodus</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1055"/>
+        <location filename="Forms/SettingsWindow.ui" line="1062"/>
         <source>User Interface</source>
         <translation>Brukergrensesnitt</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="893"/>
+        <location filename="Forms/SettingsWindow.ui" line="900"/>
         <source>Run Menu</source>
         <translation>Kjør meny</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="940"/>
+        <location filename="Forms/SettingsWindow.ui" line="947"/>
         <source>Add program</source>
         <translation>Legg til program</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="998"/>
+        <location filename="Forms/SettingsWindow.ui" line="1005"/>
         <source>You can configure custom entries for all sandboxes run menus.</source>
         <translation>Du kan konfigurere egendefinerte oppføringer for alle sandkasser kjøre menyer.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1020"/>
-        <location filename="Forms/SettingsWindow.ui" line="1690"/>
-        <location filename="Forms/SettingsWindow.ui" line="3284"/>
+        <location filename="Forms/SettingsWindow.ui" line="1027"/>
+        <location filename="Forms/SettingsWindow.ui" line="1697"/>
+        <location filename="Forms/SettingsWindow.ui" line="3291"/>
         <source>Remove</source>
         <translation>Fjern</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="920"/>
+        <location filename="Forms/SettingsWindow.ui" line="927"/>
         <source>Command Line</source>
         <translation>Kommandolinje</translation>
     </message>
@@ -11172,42 +11172,42 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Minimer til brett</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1435"/>
+        <location filename="Forms/SettingsWindow.ui" line="1442"/>
         <source>Hide SandMan windows from screen capture (UI restart required)</source>
         <translation>Skjul SandMan-vinduer fra skjermopptak (UI-start nødvendig)</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1786"/>
+        <location filename="Forms/SettingsWindow.ui" line="1793"/>
         <source>Assign drive letter to Ram Disk</source>
         <translation>Tilordne stasjonsbrev til Ram Disk</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1865"/>
+        <location filename="Forms/SettingsWindow.ui" line="1872"/>
         <source>When a Ram Disk is already mounted you need to unmount it for this option to take effect.</source>
         <translation>Når en Ram Disk allerede er montert, må du avmontere den for at dette alternativet skal tre i kraft.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1868"/>
+        <location filename="Forms/SettingsWindow.ui" line="1875"/>
         <source>* takes effect on disk creation</source>
         <translation>* får effekt på diskoppretting</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1882"/>
+        <location filename="Forms/SettingsWindow.ui" line="1889"/>
         <source>Support &amp;&amp; Updates</source>
         <translation>Støtte og oppdateringer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1968"/>
+        <location filename="Forms/SettingsWindow.ui" line="1975"/>
         <source>Cert Options</source>
         <translation>Cert-alternativer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1997"/>
+        <location filename="Forms/SettingsWindow.ui" line="2004"/>
         <source>&lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-use-cert&quot;&gt;Certificate usage guide&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-use-cert&quot;&gt;Veiledning for bruk av sertifikat&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1942"/>
+        <location filename="Forms/SettingsWindow.ui" line="1949"/>
         <source>HwId: 00000000-0000-0000-0000-000000000000</source>
         <translation>HwId: 0000000-0000-0000-00000000000</translation>
     </message>
@@ -11232,90 +11232,90 @@ Vær oppmerksom på at disse verdiene er brukerspesifikke og lagret globalt for 
         <translation>Bytt til sandkasset skrivebord med dobbeltklikk</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1428"/>
+        <location filename="Forms/SettingsWindow.ui" line="1435"/>
         <source>Ini Editor Options</source>
         <translation>Ini-redigeringsalternativer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2107"/>
+        <location filename="Forms/SettingsWindow.ui" line="2114"/>
         <source>Cert Info</source>
         <translation>Cert Info</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2123"/>
+        <location filename="Forms/SettingsWindow.ui" line="2130"/>
         <source>Sandboxie-Plus Version: 0.0.0</source>
         <translation>Sandboxie-Plus versjon: 0.0.0</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2133"/>
+        <location filename="Forms/SettingsWindow.ui" line="2140"/>
         <source>Sandboxie Updater</source>
         <translation>Sandboxie Updater</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2164"/>
+        <location filename="Forms/SettingsWindow.ui" line="2171"/>
         <source>Keep add-on list up to date</source>
         <translation>Hold tilleggslisten oppdatert</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2221"/>
+        <location filename="Forms/SettingsWindow.ui" line="2228"/>
         <source>The Insider channel offers early access to new features and bugfixes that will eventually be released to the public, as well as all relevant improvements from the stable channel. 
 Unlike the preview channel, it does not include untested, potentially breaking, or experimental changes that may not be ready for wider use.</source>
         <translation>Insider-kanalen tilbyr tidlig tilgang til nye funksjoner og feilrettinger som til slutt vil bli utgitt til publikum, samt alle relevante forbedringer fra den stabile kanalen.
 I motsetning til forhåndsvisningskanalen, inkluderer det ikke utestet, potensielt bryte eller eksperimentelle endringer som kanskje ikke er klare for bredere bruk.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2225"/>
+        <location filename="Forms/SettingsWindow.ui" line="2232"/>
         <source>Search in the Insider channel</source>
         <translation>Søk i Insider-kanalen</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2255"/>
+        <location filename="Forms/SettingsWindow.ui" line="2262"/>
         <source>New full installers from the selected release channel.</source>
         <translation>Nye fulle installatører fra den valgte utgivelseskanalen.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2258"/>
+        <location filename="Forms/SettingsWindow.ui" line="2265"/>
         <source>Full Upgrades</source>
         <translation>Full oppgradering</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2268"/>
+        <location filename="Forms/SettingsWindow.ui" line="2275"/>
         <source>Check periodically for new Sandboxie-Plus versions</source>
         <translation>Sjekk regelmessig for nye Sandboxie-Plus-versjoner</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2278"/>
+        <location filename="Forms/SettingsWindow.ui" line="2285"/>
         <source>More about the &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-insider&quot;&gt;Insider Channel&lt;/a&gt;</source>
         <translation>Mer om &lt;a href=&quot;https://sandboxie-plus.com/go.php?to=sbie-insider&quot;&gt;Insider-kanalen&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2298"/>
+        <location filename="Forms/SettingsWindow.ui" line="2305"/>
         <source>Keep Troubleshooting scripts up to date</source>
         <translation>Hold feilsøkingsskriptene oppdaterte</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2492"/>
+        <location filename="Forms/SettingsWindow.ui" line="2499"/>
         <source>Default sandbox:</source>
         <translation>Standard sandkasse:</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2562"/>
+        <location filename="Forms/SettingsWindow.ui" line="2569"/>
         <source>Use a Sandboxie login instead of an anonymous token</source>
         <translation>Bruke en Sandboxie-innlogging i stedet for et anonymt token</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2399"/>
+        <location filename="Forms/SettingsWindow.ui" line="2406"/>
         <source>Add &quot;Sandboxie\All Sandboxes&quot; group to the sandboxed token</source>
         <oldsource>Add &quot;Sandboxie\All Sandboxes&quot; group to the sandboxed token (experimental)</oldsource>
         <translation type="unfinished">Legg til &quot;Sandboxie\ Alle sandkasser&quot; gruppe til sandkassen token (eksperimentell)</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2528"/>
+        <location filename="Forms/SettingsWindow.ui" line="2535"/>
         <source>This feature protects the sandbox by restricting access, preventing other users from accessing the folder. Ensure the root folder path contains the %USER% macro so that each user gets a dedicated sandbox folder.</source>
         <translation>Denne funksjonen beskytter sandkassen ved å begrense tilgangen, hindre andre brukere i å få tilgang til mappen. Kontroller at rotmappestien inneholder %USER% makro slik at hver bruker får en dedikert sandkassemappe.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2531"/>
+        <location filename="Forms/SettingsWindow.ui" line="2538"/>
         <source>Restrict box root folder access to the the user whom created that sandbox</source>
         <translation>Begrense rotmappetilgang til brukeren som opprettet den sandkassen</translation>
     </message>
@@ -11341,199 +11341,204 @@ I motsetning til forhåndsvisningskanalen, inkluderer det ikke utestet, potensie
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="851"/>
-        <source>Show box alias name instead of box name in tray list</source>
+        <source>Show overlay icons for boxes in tray list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="Forms/SettingsWindow.ui" line="858"/>
+        <source>Show box alias name instead of box name in tray list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Forms/SettingsWindow.ui" line="865"/>
         <source>Maximum displayed characters for compact tray aliases. Ignored when alias display is disabled (name limit is fixed to 32).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="877"/>
+        <location filename="Forms/SettingsWindow.ui" line="884"/>
         <source>Tri-state behavior: unchecked = never, partially checked = only while Ctrl is held (default), checked = always.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="880"/>
+        <location filename="Forms/SettingsWindow.ui" line="887"/>
         <source>Show sandbox status as tooltip in tray list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1206"/>
+        <location filename="Forms/SettingsWindow.ui" line="1213"/>
         <source>Group state on start</source>
         <translation>Gruppetilstand ved start</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1442"/>
+        <location filename="Forms/SettingsWindow.ui" line="1449"/>
         <source>UI Font</source>
         <translation>UI-skrifttype</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1464"/>
+        <location filename="Forms/SettingsWindow.ui" line="1471"/>
         <source>Select Font</source>
         <translation>Velg skrifttype</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1474"/>
+        <location filename="Forms/SettingsWindow.ui" line="1481"/>
         <source>Reset Font</source>
         <translation>Nullstill skrift</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1502"/>
+        <location filename="Forms/SettingsWindow.ui" line="1509"/>
         <source>Window Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1513"/>
+        <location filename="Forms/SettingsWindow.ui" line="1520"/>
         <source>Support Dialog:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1526"/>
+        <location filename="Forms/SettingsWindow.ui" line="1533"/>
         <source>File Recovery:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1539"/>
+        <location filename="Forms/SettingsWindow.ui" line="1546"/>
         <source>Fallback:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1584"/>
+        <location filename="Forms/SettingsWindow.ui" line="1591"/>
         <source>Non-main:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1600"/>
+        <location filename="Forms/SettingsWindow.ui" line="1607"/>
         <source>Hint: Specific window settings override non-main settings. Fallback is used when the target monitor cannot be used; when disabled, each window falls back to its default current-monitor behavior.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1622"/>
+        <location filename="Forms/SettingsWindow.ui" line="1629"/>
         <source>Window Locations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1629"/>
+        <location filename="Forms/SettingsWindow.ui" line="1636"/>
         <source>Notifications:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1642"/>
+        <location filename="Forms/SettingsWindow.ui" line="1649"/>
         <source>Main:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2624"/>
+        <location filename="Forms/SettingsWindow.ui" line="2631"/>
         <source>Use Sandboxie&apos;s own enhanced UAC prompt (recommended)</source>
         <oldsource>Use Sandboxie&apos;s own enhanced UAC prompt (experimental)</oldsource>
         <translation>Bruk Sandboxies egen forbedrede UAC-prompt (anbefalt)</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2634"/>
+        <location filename="Forms/SettingsWindow.ui" line="2641"/>
         <source>Sandboxie.ini</source>
         <translation>Sandboxie.ini</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2646"/>
+        <location filename="Forms/SettingsWindow.ui" line="2653"/>
         <source>Remove Entry</source>
         <translation>Fjern oppføring</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2654"/>
+        <location filename="Forms/SettingsWindow.ui" line="2661"/>
         <source>Import Path</source>
         <translation>Importer sti</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2675"/>
+        <location filename="Forms/SettingsWindow.ui" line="2682"/>
         <source>Sandbox Configuration</source>
         <translation>Sandkasseoppsett</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2688"/>
+        <location filename="Forms/SettingsWindow.ui" line="2695"/>
         <source>Create Portable Box</source>
         <translation>Opprette bærbar boks</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2714"/>
+        <location filename="Forms/SettingsWindow.ui" line="2721"/>
         <source>Import Portable Box</source>
         <translation>Importer bærbar boks</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2775"/>
+        <location filename="Forms/SettingsWindow.ui" line="2782"/>
         <source>&lt;b&gt;Config protection applyess only to Sandboxie.ini portable box configuration is not protected by the below mechanisms&lt;/b&gt;</source>
         <translation>&lt;b&gt;Konfigurasjonsbeskyttelse gjelder kun Sandboxie.ini bærbar bokskonfigurasjon er ikke beskyttet av nedenfor mekanismer&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2785"/>
+        <location filename="Forms/SettingsWindow.ui" line="2792"/>
         <source>In the below list you can add paths to configuration inis of portable boxes</source>
         <translation>I listen nedenfor kan du legge til stier til konfigurasjon iis av bærbare bokser</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2805"/>
+        <location filename="Forms/SettingsWindow.ui" line="2812"/>
         <source>Add Portable Root</source>
         <translation>Legg til bærbar rot</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2914"/>
+        <location filename="Forms/SettingsWindow.ui" line="2921"/>
         <source>Issue message 1321 when a process has been forced into a sandbox</source>
         <oldsource>Issue message 1321 when a processes has been forced in to a sandbox</oldsource>
         <translation>Send melding 1321 når en prosess har blitt tvunget inn i en sandkasse</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2924"/>
+        <location filename="Forms/SettingsWindow.ui" line="2931"/>
         <source>Force Process Options</source>
         <translation>Tving prosessalternativer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2952"/>
+        <location filename="Forms/SettingsWindow.ui" line="2959"/>
         <source>Force files with a Mark of The Web into a sandbox</source>
         <translation>Tving filer med et merke på nettet til en sandkasse</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2972"/>
+        <location filename="Forms/SettingsWindow.ui" line="2979"/>
         <source>Sandbox for MoTW marked files</source>
         <translation>Sandkasse for MOTW merket filer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2991"/>
+        <location filename="Forms/SettingsWindow.ui" line="2998"/>
         <source>USB Drive Sandboxing</source>
         <translation>USB-stasjon sandkasse</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3007"/>
+        <location filename="Forms/SettingsWindow.ui" line="3014"/>
         <source>Volume</source>
         <translation>Volum</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3012"/>
+        <location filename="Forms/SettingsWindow.ui" line="3019"/>
         <source>Information</source>
         <translation>Informasjon</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3020"/>
+        <location filename="Forms/SettingsWindow.ui" line="3027"/>
         <source>Sandbox for USB drives:</source>
         <translation>Sandkasse for USB-stasjoner:</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3036"/>
+        <location filename="Forms/SettingsWindow.ui" line="3043"/>
         <source>Automatically sandbox all attached USB drives</source>
         <translation>Automatisk sandkasse alle vedlagte USB-stasjoner</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3093"/>
+        <location filename="Forms/SettingsWindow.ui" line="3100"/>
         <source>&lt;a href=&quot;sbie://templates&quot;&gt;update compatibility templates now&lt;/a&gt;</source>
         <oldsource>&lt;a href=&quot;sbie://templates&quot;&gt;update compatybility templates now&lt;/a&gt;</oldsource>
         <translation>&lt;a href=&quot;sbie://templates&quot;&gt;Oppdater kompatibilitetsmaler nå&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3149"/>
+        <location filename="Forms/SettingsWindow.ui" line="3156"/>
         <source>In the future, don&apos;t check software compatibility</source>
         <translation>I fremtiden, ikke sjekk programvarekompatibilitet</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3324"/>
+        <location filename="Forms/SettingsWindow.ui" line="3331"/>
         <source>&lt;html&gt;
     &lt;body&gt;
         Displays detailed tooltips when hovering over settings.&lt;br&gt;
@@ -11568,7 +11573,7 @@ I motsetning til forhåndsvisningskanalen, inkluderer det ikke utestet, potensie
 &lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3372"/>
+        <location filename="Forms/SettingsWindow.ui" line="3379"/>
         <source>&lt;html&gt;
     &lt;body&gt;
         &lt;b&gt;Auto-Completion &amp; Case Correction&lt;/b&gt;&lt;br&gt;
@@ -11634,77 +11639,77 @@ I motsetning til forhåndsvisningskanalen, inkluderer det ikke utestet, potensie
 &lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3395"/>
+        <location filename="Forms/SettingsWindow.ui" line="3402"/>
         <source>Complete</source>
         <translation>Fullstendig</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3461"/>
+        <location filename="Forms/SettingsWindow.ui" line="3468"/>
         <source>Editor settings</source>
         <translation>Redigeringsinnstillinger</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3464"/>
+        <location filename="Forms/SettingsWindow.ui" line="3471"/>
         <source>⚙</source>
         <translation>⚙</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3342"/>
+        <location filename="Forms/SettingsWindow.ui" line="3349"/>
         <source>Tooltips</source>
         <translation>Verktøy</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3445"/>
+        <location filename="Forms/SettingsWindow.ui" line="3452"/>
         <source>Validate</source>
         <translation>Valider</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3129"/>
+        <location filename="Forms/SettingsWindow.ui" line="3136"/>
         <source>Enable</source>
         <translation>Slå på</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3112"/>
+        <location filename="Forms/SettingsWindow.ui" line="3119"/>
         <source>Disable</source>
         <translation>Slå av</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3119"/>
+        <location filename="Forms/SettingsWindow.ui" line="3126"/>
         <source>Sandboxie has detected the following software applications in your system. Click OK to apply configuration settings, which will improve compatibility with these applications. These configuration settings will have effect in all existing sandboxes and in any new sandboxes.</source>
         <translation>Sandboxie har oppdaget følgende programvareprogrammer i systemet ditt. Klikk OK for å bruke konfigurasjonsinnstillinger som vil forbedre kompatibiliteten med disse programmene. Disse innstillingsinnstillingene vil ha effekt i alle eksisterende sandkasser og i alle nye sandkasser.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3172"/>
+        <location filename="Forms/SettingsWindow.ui" line="3179"/>
         <source>Local Templates</source>
         <translation>Lokale maler</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3240"/>
+        <location filename="Forms/SettingsWindow.ui" line="3247"/>
         <source>Add Template</source>
         <translation>Legg til mal</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3208"/>
+        <location filename="Forms/SettingsWindow.ui" line="3215"/>
         <source>Text Filter</source>
         <translation>Tekstfilter</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3218"/>
+        <location filename="Forms/SettingsWindow.ui" line="3225"/>
         <source>This list contains user created custom templates for sandbox options</source>
         <translation>Denne listen inneholder brukeropprettede egendefinerte maler for sandkassealternativer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3253"/>
+        <location filename="Forms/SettingsWindow.ui" line="3260"/>
         <source>Open Template</source>
         <translation>Åpne mal</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3311"/>
+        <location filename="Forms/SettingsWindow.ui" line="3318"/>
         <source>Edit ini Section</source>
         <translation>Rediger ini Seksjon</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3428"/>
+        <location filename="Forms/SettingsWindow.ui" line="3435"/>
         <source>&lt;html&gt;
     &lt;body&gt;
         &lt;p&gt;When enabled, settings will be checked and highlighted based on the INI file. Turn off to disable checking and highlighting.&lt;/p&gt;
@@ -11750,58 +11755,58 @@ I motsetning til forhåndsvisningskanalen, inkluderer det ikke utestet, potensie
 &lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3408"/>
+        <location filename="Forms/SettingsWindow.ui" line="3415"/>
         <source>Save</source>
         <translation>Lagre</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3362"/>
+        <location filename="Forms/SettingsWindow.ui" line="3369"/>
         <source>Edit ini</source>
         <translation>Rediger ini</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="3355"/>
+        <location filename="Forms/SettingsWindow.ui" line="3362"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2201"/>
+        <location filename="Forms/SettingsWindow.ui" line="2208"/>
         <source>Incremental Updates</source>
         <oldsource>Version Updates</oldsource>
         <translation>Økende oppdateringer</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2198"/>
+        <location filename="Forms/SettingsWindow.ui" line="2205"/>
         <source>Hotpatches for the installed version, updates to the Templates.ini and translations.</source>
         <translation>Hotpatches for den installerte versjonen, oppdateringer til Malene.ini og oversettelser.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2211"/>
+        <location filename="Forms/SettingsWindow.ui" line="2218"/>
         <source>The preview channel contains the latest GitHub pre-releases.</source>
         <translation>Forhåndsvisningskanalen inneholder de nyeste GitHub pre-utgivelser.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2305"/>
+        <location filename="Forms/SettingsWindow.ui" line="2312"/>
         <source>The stable channel contains the latest stable GitHub releases.</source>
         <translation>Den stabile kanalen inneholder de siste stabile GitHub-utgivelsene.</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2308"/>
+        <location filename="Forms/SettingsWindow.ui" line="2315"/>
         <source>Search in the Stable channel</source>
         <translation>Søk i den stabile kanalen</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2214"/>
+        <location filename="Forms/SettingsWindow.ui" line="2221"/>
         <source>Search in the Preview channel</source>
         <translation>Søk i forhåndsvisningskanalen</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="1922"/>
+        <location filename="Forms/SettingsWindow.ui" line="1929"/>
         <source>In the future, don&apos;t notify about certificate expiration</source>
         <translation>I fremtiden, ikke varsle om sertifikat utløp</translation>
     </message>
     <message>
-        <location filename="Forms/SettingsWindow.ui" line="2064"/>
+        <location filename="Forms/SettingsWindow.ui" line="2071"/>
         <source>Enter the support certificate here</source>
         <translation>Skriv inn støttesertifikatet her</translation>
     </message>
